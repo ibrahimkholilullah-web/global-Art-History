@@ -15,6 +15,7 @@ const ViewDitails = () => {
       }, [setArtifact])
       const fatchingData =async () =>{
         const {data} = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact/${id}`)
+        console.log(data)
         setArtifact(data)
       }
 
@@ -28,6 +29,7 @@ const ViewDitails = () => {
         like_count,
         _id
     } = artifact || {}
+    console.log(artifact)
     const handleLike = async () => {
        const likedData = {
         artifactImage, artifactName,

@@ -9,6 +9,7 @@ import PrivateRouter from "../PrivatedRouter/PrivateRouter";
 import ViewDitails from "../Page/ViewDitails";
 import LikedArtifacts from "../Path/LikedArtifacts";
 import MyArtifactsPage from "../Path/MyArtifactsPage";
+import UpdatePage from "../Page/UpdatePage";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         {
             path: "/myartifactpage",
             element: <PrivateRouter><MyArtifactsPage></MyArtifactsPage></PrivateRouter>
+        },
+        {
+            path:'/updateData/:id',
+            element: <PrivateRouter><UpdatePage></UpdatePage></PrivateRouter>,
+            loader: ({params}) => fetch(`${import.meta.env.VITE_APP_URL}/artifact/${params.id}`) 
         }
     ]
     },
