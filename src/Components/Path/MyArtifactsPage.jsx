@@ -3,6 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MyAddCard from '../Page/MyAddCard';
+import toast from 'react-hot-toast';
 
 const MyArtifactsPage = () => {
     const { user } = useContext(AuthContext);
@@ -30,15 +31,39 @@ const MyArtifactsPage = () => {
     if (loading) {
         return <p>Loading liked artifacts...</p>;
     }
-    // const formData = {
-    //     artifactName,
-    //     artifactImage,
-    //     artifactType,
-    //     historicalContext,
-    //     createdAt,discoveredAt,
-    //     discoveredBy,presentLocation,name,email,
-    //     like_count : 0 
-    // }
+    const handleDelete = async (id) =>{
+        try{
+           const {data} =  await axios.delete(`${import.meta.env.VITE_APP_URL}/artifact/${id}`)
+           toast.success('Sucessfully Delete Data')
+           fetchData()
+        }catch(err){
+            toast.error(err.message)
+        }
+        
+       }
+       const updateDelete =  (id) =>{
+           toast(
+               (t) => (
+                 <div className='flex gap-5 items-center'>
+                   <div>
+                     <p>Are You <b>Sure ? </b></p>
+                   </div>
+                   <div className='flex gap-2'>
+                     <button className='bg-red-500 text-white py-2 rounded-md px-3'
+                     onClick={()=> {
+                       toast.dismiss(t.id)
+                       handleDelete(id)}
+                     }
+                     >Yes</button>
+                     <button className='bg-green-500 text-white py-2 rounded-md px-3'
+                      onClick={() => toast.dismiss(t.id)}>Dismiss</button>
+                     </div>
+                 </div>
+               ),
+              
+             );
+   
+       }
     return (
         <div className="overflow-x-auto">
             {myAddArt.length > 0 ? (
@@ -55,7 +80,7 @@ const MyArtifactsPage = () => {
                     </thead>
                     <tbody>
                        {
-                        myAddArt.map((card, inx) => <MyAddCard key={inx} inx={inx} card={card}></MyAddCard>)
+                        myAddArt.map((card, inx) => <MyAddCard updateDelete={updateDelete} key={inx} inx={inx} card={card}></MyAddCard>)
                        }
                     </tbody>
                 </table>

@@ -1,9 +1,10 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { CiEdit } from 'react-icons/ci';
 import { MdDelete } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const MyAddCard = ({card,inx}) => {
+const MyAddCard = ({card,inx,updateDelete}) => {
  console.log(card)
     const {
         artifactName,
@@ -15,9 +16,7 @@ const MyAddCard = ({card,inx}) => {
         like_count,
         _id
     } = card || {}
-    const handleDelete = (id) =>{
-     console.log(id)   
-    }
+   
     return (
             <tr>
             <th>
@@ -46,7 +45,7 @@ const MyAddCard = ({card,inx}) => {
           <td>{like_count}</td>
           <th className='flex text-2xl items-center gap-3'>
                 <Link to={`/updateData/${_id}`} className=""><CiEdit /></Link>
-                <button onClick={() => handleDelete(_id)}><MdDelete />
+                <button onClick={() => updateDelete(_id)}><MdDelete />
                 </button>
           </th>
         </tr>

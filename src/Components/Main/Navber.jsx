@@ -1,17 +1,53 @@
 import { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../AuthProvider/AuthProvider'
+import { FaHome } from 'react-icons/fa'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
  const pathName = <>
-<li><NavLink to='/'>Home</NavLink></li>
-<li><NavLink to='/allArtifacts'>All Artifacts</NavLink></li>
-<li><NavLink to='/AddArtifacts'>Add Artifacts</NavLink></li>
+<li>
+
+
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-black pb-1 text-black"
+                : "hover:border-b-2 hover:border-gray-300 pb-1 text-gray-700"
+            }
+          > <FaHome />
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/allArtifacts"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-black pb-1 text-black"
+                : "hover:border-b-2 hover:border-gray-300 pb-1 text-gray-700"
+            }
+          >
+            All Artifacts
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/AddArtifacts"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-black pb-1 text-black"
+                : "hover:border-b-2 hover:border-gray-300 pb-1 text-gray-700"
+            }
+          >
+            Add Artifacts
+          </NavLink>
+        </li>
 
  </>
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 border-b-2 py-4 my-2">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,11 +73,12 @@ const Navbar = () => {
     <a className="btn btn-ghost text-xl">Global art history</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      {pathName}
-    </ul>
+   
   </div>
   <div className="navbar-end">
+  <ul className="menu menu-horizontal gap-3 px-1 hidden items-center lg:flex">
+      {pathName}
+    </ul>
   {!user && (
     <Link to="/login" className=" border-b-2">Login</Link>
     )}
