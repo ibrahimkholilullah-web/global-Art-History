@@ -34,7 +34,7 @@ const Navbar = () => {
        {pathName}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">Global art history</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -72,10 +72,10 @@ const Navbar = () => {
               </div>
               
               <li>
-                <Link to='/my-bids'>My Bids</Link>
+                <Link to='/likedArtifacts'>Liked Artifacts Page</Link>
               </li>
               <li>
-                <Link to='/bid-requests'>Bid Requests</Link>
+                <Link to='/myartifactpage'>My Artifacts Page</Link>
               </li>
               <li className='mt-2'>
                 <Link to="/"

@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from '../Firebase/firebase.config';
 
 const Login = () => {
     const navigate = useNavigate()
     const {user,signIn,signInWithGoogle} = useContext(AuthContext)
     const location = useLocation()
-    const from = location?.state || "/"
+    const emailref = useRef() 
     const handleGoogleSignIn = async () =>{
         try{
             signInWithGoogle()
@@ -26,11 +28,30 @@ const Login = () => {
         const pass = form.password.value
         try{
          await signIn(email,pass)
-         toast.success('Sign In User....!')
          navigate(location?.state ? location.state : "/");
         }catch(err){
             toast.error(err.message)
         }
+    }
+    const handleForgatePassword = () =>{
+        const email = emailref.current.value;
+        if(email){
+            sendPasswordResetEmail(auth, email)
+            .then(()=>{
+                toast.success('Chack Your Email Address...', {
+                    style: {
+                      border: '1px solid #713200',
+                      padding: '16px',
+                      color: '#713200',
+                    },
+                    iconTheme: {
+                      primary: '#713200',
+                      secondary: '#FFFAEE',
+                    },
+                  });
+            })
+        }
+
     }
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
@@ -98,6 +119,7 @@ const Login = () => {
                 Email Address
               </label>
               <input
+                ref={emailref}
                 id='LoggingEmailAddress'
                 autoComplete='email'
                 name='email'
@@ -124,6 +146,15 @@ const Login = () => {
                 type='password'
               />
             </div>
+            <p className="mt-2">
+              <a
+                href="#"
+                onClick={handleForgatePassword}
+                className="text-green-500 text-sm hover:underline"
+              >
+                Forgot Password?
+              </a>
+              </p>
             <div className='mt-6'>
               <button
                 type='submit'

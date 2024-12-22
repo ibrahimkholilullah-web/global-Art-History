@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
@@ -6,12 +6,12 @@ import toast from 'react-hot-toast';
 const Register = () => {
     const location = useLocation()
     const from = location?.state || "/"
+    const [error, setError] = useState('')
     const navigate = useNavigate()
     const {createUser,updateUserProfile,setUser,signInWithGoogle} = useContext(AuthContext)
     const handleGoogleSignIn = async () =>{
         try{
             signInWithGoogle()
-            toast.success("Google Sign In User..!!")
             navigate(location?.state ? location.state : "/");
         }catch(err){
             toast.error(err.message)
@@ -24,6 +24,11 @@ const Register = () => {
         const name = form.name.value
         const photo = form.photo.value
         const pass = form.password.value
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if(!passwordRegex.test(pass)){
+            setError('1 uppercase, 1 lowercase, and at least 6 characters long.')
+            return
+        }
         try{
           const result = await  createUser(email,pass)
           await updateUserProfile(name, photo)
@@ -158,7 +163,9 @@ const Register = () => {
                 </button>
               </div>
             </form>
-  
+            {
+                error && <p className='text-red-400 text-sm'>{error}</p>
+            }
             <div className='flex items-center justify-between mt-4'>
               <span className='w-1/5 border-b  md:w-1/4'></span>
   

@@ -1,11 +1,42 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddArtifact = () => {
+const {user} = useContext(AuthContext)
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Artifact Added Successfully!");
+    const from = e.target;
+    const artifactName = from.artifactName.value
+    const artifactImage = from.artifactImage.value
+    const discoveredAt = from.discoveredAt.value
+    const createdAt = from.createdAt.value
+    const historicalContext = from.historicalContext.value
+    const artifactType = from.artifactType.value
+    const discoveredBy = from.discoveredBy.value
+    const presentLocation = from.presentLocation.value
+    const name = from.name.value
+    const email = from.email.value
+
+    const formData = {
+        artifactName,
+        artifactImage,
+        artifactType,
+        historicalContext,
+        createdAt,discoveredAt,
+        discoveredBy,presentLocation,name,email,
+        like_count : 0 
+    }
+    try{
+        const {data} = await axios.post(`${import.meta.env.VITE_APP_URL}/artifact`, formData)
+        console.log("Form submitted:", data);
+        toast.success('success Fully Add Artifact data')
+        from.reset()
+    }catch(err){
+        toast.success(err.message)
+    }
   };
 
   return (
@@ -132,6 +163,8 @@ const AddArtifact = () => {
           </label>
           <input
             type="text"
+            name="name"
+            defaultValue={user?.displayName}
             readOnly
             className="w-full mt-1 px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
@@ -143,6 +176,8 @@ const AddArtifact = () => {
           </label>
           <input
             type="email"
+            name="email"
+            defaultValue={user?.email}
             readOnly
             className="w-full mt-1 px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
