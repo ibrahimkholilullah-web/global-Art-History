@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const ViewDitails = () => {
     const {user} = useContext(AuthContext)
@@ -46,7 +47,11 @@ const ViewDitails = () => {
        }
       };
     return (
-        <section className="p-6 dark:bg-gray-100 text-white bg-gray-800 dark:text-gray-800">
+        <div>
+           <Helmet>
+            <title>Artifact Ditails</title>
+        </Helmet>
+          <section className="p-6 dark:bg-gray-100 text-white bg-gray-800 dark:text-gray-800">
 	<div className="container grid gap-6 mx-auto text-center items-center lg:grid-cols-2 xl:grid-cols-5">
 		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
 			<span className="block mb-2 dark:text-violet-600 ">{artifactName}</span>
@@ -72,6 +77,7 @@ const ViewDitails = () => {
 		<img src={artifactImage} alt="" className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500" />
 	</div>
 </section>
+        </div>
     );
 };
 

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../Firebase/firebase.config';
 import loginLottfi from "../../../public/Login/Animation - 1734871721649.json"
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
     const navigate = useNavigate()
     const {user,signIn,signInWithGoogle} = useContext(AuthContext)
@@ -13,9 +14,6 @@ const Login = () => {
     const handleGoogleSignIn = async () =>{
         try{
             signInWithGoogle()
-
-
-            toast.success("Google Sign In User..!!")
             navigate(location?.state ? location.state : "/");
         }catch(err){
             toast.error(err.message)
@@ -54,7 +52,11 @@ const Login = () => {
 
     }
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
+       <div>
+        <Helmet>
+            <title>Login | G. art H. </title>
+        </Helmet>
+         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg items-center  lg:max-w-4xl '>
         <div
           className='hidden  lg:block lg:w-1/2'
@@ -180,6 +182,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+       </div>
     );
 };
 

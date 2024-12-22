@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ArtifactCart from "../Page/ArtifactCart";
+import { Helmet } from "react-helmet-async";
 
 const AllArtifacts = () => {
   const artifactData = useLoaderData();
@@ -25,6 +26,9 @@ const AllArtifacts = () => {
 
   return (
     <div>
+        <Helmet>
+            <title>All - Aritfacts | </title>
+        </Helmet>
       <div className="flex items-center justify-between">
         <p className="text-sm bg-blue-gray-200 w-24 rounded-3xl text-center p-1">
           {artifact.length} Artifact{artifact.length !== 1 && "s"}

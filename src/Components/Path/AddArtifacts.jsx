@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const AddArtifact = () => {
 const {user} = useContext(AuthContext)
-
+const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     const from = e.target;
@@ -34,13 +36,18 @@ const {user} = useContext(AuthContext)
         console.log("Form submitted:", data);
         toast.success('success Fully Add Artifact data')
         from.reset()
+        navigate('/allArtifacts')
     }catch(err){
         toast.success(err.message)
     }
   };
 
   return (
-    <div className=" mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+    <div>
+       <Helmet>
+            <title>Add Artifact | G. art H. </title>
+        </Helmet>
+      <div className=" mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Add Artifact</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
        <div className="md:flex gap-5 items-center">
@@ -191,6 +198,7 @@ const {user} = useContext(AuthContext)
           Add Artifact
         </button>
       </form>
+    </div>
     </div>
   );
 };

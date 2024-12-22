@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const LikedArtifacts = () => {
     const { user } = useContext(AuthContext);
@@ -31,7 +32,11 @@ const LikedArtifacts = () => {
     }
 
     return (
-        <div className="overflow-x-auto">
+        <div>
+             <Helmet>
+            <title>Liked Artifacts | G. art H. </title>
+        </Helmet>
+            <div className="overflow-x-auto">
             {likes.length > 0 ? (
                 <table className="table">
                     {/* Table Header */}
@@ -86,6 +91,7 @@ const LikedArtifacts = () => {
                     <p className="text-gray-500">You haven’t liked any artifacts yet.</p>
                 </div>
             )}
+        </div>
         </div>
     );
 };

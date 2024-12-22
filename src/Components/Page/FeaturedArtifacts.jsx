@@ -23,7 +23,7 @@ const FeaturedArtifacts = () => {
 
   return (
     <div className="featured-artifacts">
-      <h2 className="text-center my-4 text-lg md:text-3xl font-bold">Featured Artifacts</h2>
+      <h2 className="text-center my-4 text-lg md:text-3xl font-bold border-b-2 py-2">Featured Artifacts</h2>
       <div className="artifact-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact.map((artifact) => (
           <div key={artifact._id} className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">

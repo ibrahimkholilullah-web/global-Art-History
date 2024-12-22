@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MyAddCard from '../Page/MyAddCard';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const MyArtifactsPage = () => {
     const { user } = useContext(AuthContext);
@@ -65,7 +66,11 @@ const MyArtifactsPage = () => {
    
        }
     return (
-        <div className="overflow-x-auto">
+       <div>
+         <Helmet>
+            <title>MyArtifactsPage</title>
+        </Helmet>
+         <div className="overflow-x-auto">
             {myAddArt.length > 0 ? (
                 <table className="table">
                     {/* Table Header */}
@@ -90,6 +95,7 @@ const MyArtifactsPage = () => {
                 </div>
             )}
         </div>
+       </div>
     );
 };
 

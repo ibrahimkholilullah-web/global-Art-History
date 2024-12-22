@@ -105,7 +105,7 @@ const Navbar = () => {
               <div>
               <img src={user.photoURL} className='w-10 h-10 mx-auto rounded-full' alt="" />
               <li><p className=''>{user.displayName}</p></li>
-              <li><p className=''>{user.email}</p></li>
+              <li><p>{user.email}</p></li>
               </div>
               
               <li>
