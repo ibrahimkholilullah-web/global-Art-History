@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../Firebase/firebase.config';
-
+import loginLottfi from "../../../public/Login/Animation - 1734871721649.json"
 const Login = () => {
     const navigate = useNavigate()
     const {user,signIn,signInWithGoogle} = useContext(AuthContext)
@@ -55,13 +55,13 @@ const Login = () => {
     }
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-      <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+      <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg items-center  lg:max-w-4xl '>
         <div
-          className='hidden bg-cover bg-center lg:block lg:w-1/2'
-        //   style={{
-        //     backgroundImage: `url(${bgImg})`,
-        //   }}
-        ></div>
+          className='hidden  lg:block lg:w-1/2'
+          
+        >
+          <iframe height={500} className='mx-auto' src="https://lottie.host/embed/4732bd00-4405-4792-a8cc-91af315e22dd/sewYRIAW1I.lottie"></iframe>
+        </div>
 
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
           <div className='flex justify-center mx-auto'>
