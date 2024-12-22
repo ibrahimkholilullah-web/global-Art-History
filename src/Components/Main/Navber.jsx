@@ -70,7 +70,7 @@ const Navbar = () => {
        {pathName}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Global art history</a>
+    <a className="btn btn-ghost md:text-xl">Global art history</a>
   </div>
   <div className="navbar-center hidden lg:flex">
    
@@ -104,8 +104,8 @@ const Navbar = () => {
             >
               <div>
               <img src={user.photoURL} className='w-10 h-10 mx-auto rounded-full' alt="" />
-              <p className='my-2'>{user.displayName}</p>
-              <p className='my-2'>{user.email}</p>
+              <li><p className=''>{user.displayName}</p></li>
+              <li><p className=''>{user.email}</p></li>
               </div>
               
               <li>

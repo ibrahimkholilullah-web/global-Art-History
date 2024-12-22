@@ -7,8 +7,10 @@ const AllArtifacts = () => {
     console.log(artifactData)
     return (
         <div>
+           <div className='flex items-center justify-between'>
+           <p className='text-sm bg-blue-gray-200  w-24 rounded-3xl text-center p-1'>{artifactData.length} Artifact</p>
             <div>
-            <label className="input my-4 w-3/5 mx-auto input-bordered flex items-center gap-2">
+            <label className="input my-4 mx-auto input-bordered flex items-center gap-2">
                    <input type="text" className="grow" placeholder="Search" />
                    <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +25,7 @@ const AllArtifacts = () => {
                  </label>
 
             </div>
+           </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     artifactData?.map(artifactCart => <ArtifactCart key={artifactCart._id} card={artifactCart} ></ArtifactCart>)

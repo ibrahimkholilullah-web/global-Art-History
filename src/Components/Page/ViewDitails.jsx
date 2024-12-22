@@ -37,9 +37,8 @@ const ViewDitails = () => {
         AuthEmail: email
        }
        try{
-       const {data} = await axios.post(`${import.meta.env.VITE_APP_URL}/likes`, likedData)
+        await axios.post(`${import.meta.env.VITE_APP_URL}/likes`, likedData)
     //    setArtifact(data)
-       console.log(data)
        fatchingData()
        toast.success("You Like This Artifact")
        }catch(err){
@@ -50,17 +49,17 @@ const ViewDitails = () => {
         <section className="p-6 dark:bg-gray-100 text-white bg-gray-800 dark:text-gray-800">
 	<div className="container grid gap-6 mx-auto text-center items-center lg:grid-cols-2 xl:grid-cols-5">
 		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
-			<span className="block mb-2 dark:text-violet-600">{artifactName}</span>
-			<h1 className="text-5xl font-extrabold dark:text-gray-900">{createdAt}, {discoveredAt}</h1>
-			<p className="my-8">
-				<span className="font-medium dark:text-gray-900"></span>{historicalContext}
+			<span className="block mb-2 dark:text-violet-600 ">{artifactName}</span>
+			<h1 className="md:text-5xl font-extrabold dark:text-gray-900">{createdAt}, {discoveredAt}</h1>
+			<p className="my-8 text-left md:text-center">
+				<span className="font-medium dark:text-gray-900 text-left ">{historicalContext}</span>
 			</p>
 		   <div>
-            <p>Artifact Type : {artifactType}</p>
-            <p>DiscoveredBy : {discoveredBy}</p>
-            <p>PresentLocation : {presentLocation}</p>
-            <p>Name : {name}</p>
-            <p>Email : {email}</p>
+            <p className='text-sm text-left md:text-center'>Artifact Type : {artifactType}</p>
+            <p className='text-sm text-left md:text-center'>DiscoveredBy : {discoveredBy}</p>
+            <p className='text-sm text-left md:text-center'>PresentLocation : {presentLocation}</p>
+            <p className='text-sm text-left md:text-center'>Name : {name}</p>
+            <p className='text-sm text-left md:text-center'>Email : {email}</p>
             <button onClick={handleLike} type="button" className="flex items-center p-1 my-4 space-x-1.5">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-4 h-4 fill-current dark:text-violet-600">
 					<path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>

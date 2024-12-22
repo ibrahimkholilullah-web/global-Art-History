@@ -21,7 +21,7 @@ const ArtifactCart = ({card}) => {
 	</div>
 	<div>
 		<img src={artifactImage} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-		<h2 className="mb-1 text-xl font-semibold">{historicalContext}</h2>
+		<h2 className="mb-1 md:text-xl font-semibold">{historicalContext}</h2>
 	</div>
 	<div className="flex flex-wrap justify-between">
 		

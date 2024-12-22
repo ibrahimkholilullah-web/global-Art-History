@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FaAngleDoubleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const FeaturedArtifacts =  () => {
@@ -13,7 +14,7 @@ const FeaturedArtifacts =  () => {
    }
     return (
         <div className="featured-artifacts">
-        <h2 className="text-center my-4 text-3xl font-bold">Featured Artifacts</h2>
+        <h2 className="text-center my-4 text-lg md:text-3xl font-bold">Featured Artifacts</h2>
         <div className="artifact-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {
             artifact?.slice(0,6).map(artifact => (
@@ -21,7 +22,7 @@ const FeaturedArtifacts =  () => {
 	             <img src={artifact.artifactImage} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
 	             <div className="flex flex-col justify-between p-6 space-y-8">
 	             	<div className="space-y-2">
-	             		<h2 className="text-3xl font-semibold tracking-wide">{artifact.artifactName}</h2>
+	             		<h2 className="md:text-3xl text-lg font-semibold tracking-wide">{artifact.artifactName}</h2>
                    <button type="button" className="flex items-center p-1 space-x-1.5">
 			             	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-4 h-4 fill-current dark:text-violet-600">
 			             		<path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>
@@ -38,6 +39,8 @@ const FeaturedArtifacts =  () => {
             ))
           }
         </div>
+        <Link to='/allArtifacts' className="btn my-2 bg-white border-2">View All Artifacts<FaAngleDoubleRight />
+        </Link>
       </div>
     );
 };

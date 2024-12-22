@@ -22,8 +22,8 @@ const ExtraOne = () => {
             </div>
           </div>
           <div className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
-            <h1 className="text-4xl font-bold mb-6">Historical Reenactment Group</h1>
-            <p className="text-lg leading-relaxed">
+            <h1 className="md:text-4xl font-bold mb-6">Historical Reenactment Group</h1>
+            <p className="md:text-lg text-sm leading-relaxed">
               We specialise in the high Medieval period. Founded in 2005 in and around Manchester, 
               we now have members from all over the UK. Our interests cover the period from the early 
               middle ages and up to the Renaissance.
