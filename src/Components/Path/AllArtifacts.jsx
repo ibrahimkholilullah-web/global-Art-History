@@ -3,6 +3,7 @@ import ArtifactCart from "../Page/ArtifactCart";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import UserAuthToken from "../Page/UserAuthToken";
+import axios from "axios";
 
 const AllArtifacts = () => {
   const useAuthAxios = UserAuthToken(); // Assuming this provides an Axios instance with auth
@@ -12,8 +13,7 @@ const AllArtifacts = () => {
   useEffect(() => {
     const fetchArtifacts = async () => {
       try {
-        const { data } = await useAuthAxios.get(
-          `/artifact?searchParams=${encodeURIComponent(search)}`
+        const { data } = await useAuthAxios.get(`/artifact?searchParams=${encodeURIComponent(search)}`
         );
         setArtifact(data);
       } catch (err) {

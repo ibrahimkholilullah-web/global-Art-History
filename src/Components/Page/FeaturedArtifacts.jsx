@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const FeaturedArtifacts = () => {
   const [artifact, setArtifact] = useState([]);
@@ -13,12 +13,12 @@ const FeaturedArtifacts = () => {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact`);
+      const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact/home`);
       // Sort by like_count in descending order and take top 6
-      const sortedArtifacts = data.sort((a, b) => b.like_count - a.like_count).slice(0, 6);
-      setArtifact(sortedArtifacts);
+      // const sortedArtifacts = data.sort((a, b) => b.like_count - a.like_count).slice(0, 6);
+      setArtifact(data);
     } catch (error) {
-      tost.error("Error fetching artifacts:", error);
+      toast.error("Error fetching artifacts:", error);
     }
   };
 
@@ -27,10 +27,7 @@ const FeaturedArtifacts = () => {
       <h2 className="text-center my-4 text-lg md:text-3xl text-[#D98855] font-bold border-b-2 py-2">Featured Artifacts</h2>
       <div className="artifact-cards grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact.map((artifact) => (
-          <motion.div
-          whileHover={{scale: 1.05}} 
-          transition={{duration:0.5}}
-         whileTap={{scale:0.50}}
+          <div
           key={artifact._id} className=" ibrahim border-2 border-white p-1 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
             <img
               src={artifact.artifactImage}
@@ -57,7 +54,7 @@ const FeaturedArtifacts = () => {
                 See More Details   <FaAngleDoubleRight />
               </Link>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
       <Link to="/allArtifacts" className="btn my-2 bg-[#D98855] text-white border-2">

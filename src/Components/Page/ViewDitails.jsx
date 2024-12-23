@@ -4,12 +4,14 @@ import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import UserAuthToken from './UserAuthToken';
 
 const ViewDitails = () => {
     const { user } = useContext(AuthContext);
     const [artifact, setArtifact] = useState({});
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
+    const useAuthAxiose = UserAuthToken()
 
     useEffect(() => {
         fatchingData();
@@ -18,7 +20,7 @@ const ViewDitails = () => {
 
     const fatchingData = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact/${id}`);
+            const { data } = await useAuthAxiose.get(`/artifact/${id}`);
             setArtifact(data);
         } catch (error) {
             toast.error("Failed to fetch artifact data.");

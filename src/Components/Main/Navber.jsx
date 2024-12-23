@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
           <ul
               tabIndex={0}
-              className="dropdown-content text-sm  bg-[#302E2F] border border-white absolute right-0  rounded-box z-10 p-2 shadow"
+              className="dropdown-content text-sm w-52  bg-[#302E2F] border border-white absolute right-0  rounded-box z-10 p-2 shadow"
             >
               <div>
                 <img
@@ -108,7 +108,7 @@ const Navbar = () => {
                 />
                 <div className='mt-2'>
                   <li><p className="w-full">{user.displayName || 'Anonymous'}</p></li>
-                  <li><p className="text-sm">{user.email}</p></li>
+                  <li><p className="text-[12px]">{user.email}</p></li>
                 </div>
               </div>
               <details className="dropdown">

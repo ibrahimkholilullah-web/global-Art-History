@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import UserAuthToken from '../Page/UserAuthToken';
  import nodata  from "../../assets/Image/Nodata.png"
+import toast from 'react-hot-toast';
 const LikedArtifacts = () => {
     const { user } = useContext(AuthContext);
     const [likes, setLikes] = useState([]);
@@ -22,7 +23,7 @@ const LikedArtifacts = () => {
                 setLikes(data);
             }
         } catch (error) {
-            console.error("Error fetching liked artifacts:", error);
+            toast.error('Error fetching liked artifacts')
         } finally {
             setLoading(false);
         }

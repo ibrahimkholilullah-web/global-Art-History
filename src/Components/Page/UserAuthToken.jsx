@@ -13,7 +13,7 @@ const UserAuthToken = () => {
         AuthAxiose.interceptors.response.use(res =>{
             return res
         }, (error)=>{
-            if(error.status === 401 || error.status === 401){
+            if(error.status === 401 || error.status === 403){
                 logOut()
                 .then(()=>{
                     navigate('/login')

@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         {
             path:'/updateData/:id',
             element: <PrivateRouter><UpdatePage></UpdatePage></PrivateRouter>,
-            loader: ({params}) => fetch(`${import.meta.env.VITE_APP_URL}/artifact/${params.id}`) 
+            // loader: ({params}) => fetch(`${import.meta.env.VITE_APP_URL}/artifact/${params.id}`) 
         }
     ]
     },

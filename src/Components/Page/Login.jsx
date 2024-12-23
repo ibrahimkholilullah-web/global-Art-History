@@ -29,7 +29,9 @@ const Login = () => {
         try{
          await signIn(email,pass)
          navigate(location?.state ? location.state : "/");
-         toast.success('Successfully Login User')
+         toast.success('Successfully Login User',{
+          position: 'top-left'
+         })
         }catch(err){
             toast.error(err.message)
         }
