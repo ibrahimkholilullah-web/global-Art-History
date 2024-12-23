@@ -29,12 +29,12 @@ const AllArtifacts = () => {
         <Helmet>
             <title>All - Aritfacts | </title>
         </Helmet>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center px-4 justify-between">
         <p className="text-sm bg-blue-gray-200 w-24 rounded-3xl text-center p-1">
           {artifact.length} Artifact{artifact.length !== 1 && "s"}
         </p>
         <div>
-          <label className="input my-4 mx-auto input-bordered flex items-center gap-2">
+          <label className="input my-4 mx-auto text-black input-bordered flex items-center gap-2">
             <input
               type="text"
               onChange={(e) => setSearch(e.target.value)}
@@ -56,7 +56,7 @@ const AllArtifacts = () => {
           </label>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact?.map((artifactCart) => (
           <ArtifactCart key={artifactCart._id} card={artifactCart} />
         ))}

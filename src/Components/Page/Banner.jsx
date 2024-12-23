@@ -6,7 +6,7 @@ import slider3 from "../../assets/Image/slider3.jpg";
 
 const Banner = () => {
   return (
-    <Carousel className="h-[60vh] md:h-[80vh]">
+    <Carousel className="h-[60vh] md:h-[80vh] border-2 border-[#D98855] p-1 rounded-xl">
       {/* Slide 1 */}
       <div className="relative h-full w-full">
         <img
@@ -62,7 +62,7 @@ const Banner = () => {
       </div>
 
       {/* Slide 3 */}
-      <div className="relative h-full w-full">
+      <div className="relative h-full  w-full">
         <img
           src={slider3}
           alt="image 3"

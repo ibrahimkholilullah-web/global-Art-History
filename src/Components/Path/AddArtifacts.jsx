@@ -43,16 +43,16 @@ const navigate = useNavigate()
   };
 
   return (
-    <div>
+    <div className="px-4">
        <Helmet>
             <title>Add Artifact | G. art H. </title>
         </Helmet>
-      <div className=" mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Add Artifact</h2>
+      <div className=" mx-auto p-6 bg-[#D98855] text-white rounded-lg shadow-md mt-10">
+      <h2 className="text-2xl font-bold text-[#302E2F] mb-6">Add Artifact</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Artifact Name
           </label>
           <input
@@ -60,12 +60,12 @@ const navigate = useNavigate()
             name="artifactName"
             required
             placeholder="Enter artifact name"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Artifact Image (URL)
           </label>
           <input
@@ -73,19 +73,19 @@ const navigate = useNavigate()
             name="artifactImage"
             required
             placeholder="Enter image URL"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-[#302E2F] border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        </div>
 
         <div className="md:flex gap-5 items-center">
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Artifact Type
           </label>
           <select
             name="artifactType"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="Tools">Tools</option>
             <option value="Weapons">Weapons</option>
@@ -95,21 +95,21 @@ const navigate = useNavigate()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Historical Context
           </label>
           <textarea
             name="historicalContext"
             required
             placeholder="Enter historical context"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           ></textarea>
         </div>
         </div>
 
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Created At
           </label>
           <input
@@ -117,12 +117,12 @@ const navigate = useNavigate()
             name="createdAt"
             required
             placeholder="E.g., 100 BC"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Discovered At
           </label>
           <input
@@ -130,14 +130,14 @@ const navigate = useNavigate()
             name="discoveredAt"
             required
             placeholder="E.g., 1799"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        </div>
 
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Discovered By
           </label>
           <input
@@ -145,12 +145,12 @@ const navigate = useNavigate()
             name="discoveredBy"
             required
             placeholder="Enter discoverer's name"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Present Location
           </label>
           <input
@@ -158,14 +158,14 @@ const navigate = useNavigate()
             name="presentLocation"
             required
             placeholder="Enter present location"
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        </div>
 
         <div className="md:flex gap-5 items-center">
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Artifact Adder
           </label>
           <input
@@ -173,12 +173,12 @@ const navigate = useNavigate()
             name="name"
             defaultValue={user?.displayName}
             readOnly
-            className="w-full mt-1 px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#302E2F]">
             Email
           </label>
           <input
@@ -186,14 +186,14 @@ const navigate = useNavigate()
             name="email"
             defaultValue={user?.email}
             readOnly
-            className="w-full mt-1 px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 bg-gray-100 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         </div>
 
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+          className="w-full px-4 py-2 bg-[#302E2F] text-white font-semibold rounded-lg hover:bg-blue-600"
         >
           Add Artifact
         </button>

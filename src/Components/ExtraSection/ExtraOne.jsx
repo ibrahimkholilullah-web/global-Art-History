@@ -10,7 +10,7 @@ const ExtraOne = () => {
             <img
               src={extra1} // Replace with your knight image URL
               alt="Knights"
-              className="w-full h-auto rounded-lg shadow-lg bg-black/25"
+              className="w-full border-2 p-2 border-[#D98855] h-auto rounded-lg shadow-lg bg-black/25"
             />
             <div className="absolute bottom-5 right-5 w-1/3">
               <img
@@ -22,8 +22,8 @@ const ExtraOne = () => {
             </div>
           </div>
           <div className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
-            <h1 className="md:text-4xl font-bold mb-6">Historical Reenactment Group</h1>
-            <p className="md:text-lg text-sm leading-relaxed">
+            <h1 className="md:text-4xl font-bold mb-6 text-[#D98855]">Historical Reenactment Group</h1>
+            <p className="md:text-lg text-sm leading-relaxed text-white">
               We specialise in the high Medieval period. Founded in 2005 in and around Manchester, 
               we now have members from all over the UK. Our interests cover the period from the early 
               middle ages and up to the Renaissance.

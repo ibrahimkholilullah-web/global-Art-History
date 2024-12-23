@@ -5,7 +5,6 @@ import { MdDelete } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const MyAddCard = ({card,inx,updateDelete}) => {
- console.log(card)
     const {
         artifactName,
         artifactImage,
@@ -19,7 +18,7 @@ const MyAddCard = ({card,inx,updateDelete}) => {
    
     return (
             <tr>
-            <th>
+            <th className='text-[#D98855]'> 
             {inx + 1}
           </th>
           <td>
@@ -45,7 +44,7 @@ const MyAddCard = ({card,inx,updateDelete}) => {
           <td>{like_count}</td>
           <th className='flex text-2xl items-center gap-3'>
                 <Link to={`/updateData/${_id}`} className=""><CiEdit /></Link>
-                <button onClick={() => updateDelete(_id)}><MdDelete />
+                <button className='text-[#D98855]' onClick={() => updateDelete(_id)}><MdDelete />
                 </button>
           </th>
         </tr>

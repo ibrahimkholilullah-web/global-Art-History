@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import MyAddCard from '../Page/MyAddCard';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
+import UserAuthToken from '../Page/UserAuthToken';
 
 const MyArtifactsPage = () => {
     const { user } = useContext(AuthContext);
     const [myAddArt, setMyAddArt] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const useuseAuthAxiose = UserAuthToken()
     useEffect(() => {
         fetchData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,7 +20,7 @@ const MyArtifactsPage = () => {
     const fetchData = async () => {
         try {
             if (user?.email) {
-                const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact/${user?.email}/status`);
+                const { data } = await useuseAuthAxiose.get(`/artifact/${user?.email}/status`);
                 setMyAddArt(data);
             }
         } catch (error) {
@@ -28,7 +29,6 @@ const MyArtifactsPage = () => {
             setLoading(false);
         }
     };
-    console.log(myAddArt.length)
     if (loading) {
         return <p>Loading liked artifacts...</p>;
     }
@@ -68,14 +68,16 @@ const MyArtifactsPage = () => {
     return (
        <div>
          <Helmet>
-            <title>MyArtifactsPage</title>
+            <title>My Artifact sPage</title>
         </Helmet>
-         <div className="overflow-x-auto">
+        <h1 className='text-2xl m-2 font-bold'>My Artifacts Page</h1>
+        <p className='m-2 text-sm bg-[#D98855] w-20 text-center rounded-xl'>{myAddArt.length} Art</p>
+         <div className="overflow-x-auto m-2 border p-2 rounded-lg ">
             {myAddArt.length > 0 ? (
                 <table className="table">
                     {/* Table Header */}
                     <thead>
-                        <tr> 
+                        <tr className='text-[#D98855]'> 
                             <th>No</th>
                             <th>Name</th>
                             <th>Location</th>
@@ -91,7 +93,7 @@ const MyArtifactsPage = () => {
                 </table>
             ) : (
                 <div className="text-center py-10">
-                    <p className="text-gray-500">You haven’t liked any artifacts yet.</p>
+                    <p className="text-gray-500">You haven’t My Add any artifacts yet.</p>
                 </div>
             )}
         </div>
