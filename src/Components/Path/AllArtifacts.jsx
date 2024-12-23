@@ -1,42 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import ArtifactCart from "../Page/ArtifactCart";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
+import UserAuthToken from "../Page/UserAuthToken";
 
 const AllArtifacts = () => {
-  const artifactData = useLoaderData();
-  const [artifact, setArtifact] = useState(artifactData);
+  const useAuthAxios = UserAuthToken(); // Assuming this provides an Axios instance with auth
+  const [artifact, setArtifact] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchArtifacts = async () => {
       try {
-        const response = await fetch(
-          `${import.meta.env.VITE_APP_URL}/artifact?searchParams=${search}`
+        const { data } = await useAuthAxios.get(
+          `/artifact?searchParams=${encodeURIComponent(search)}`
         );
-        const data = await response.json();
         setArtifact(data);
-      } catch (error) {
-        console.error("Error fetching artifacts:", error);
+      } catch (err) {
+        toast.error("Failed to load artifacts. Please try again.");
       }
     };
 
     fetchArtifacts();
-  }, [search]);
+  }, [search, useAuthAxios]); // Dependency array includes `search` and `useAuthAxios`
 
   return (
     <div>
-        <Helmet>
-            <title>All - Aritfacts | </title>
-        </Helmet>
-      <div className="flex items-center px-4 justify-between">
+      <Helmet>
+        <title>All Artifacts | Your Website</title>
+      </Helmet>
+      <div className="md:flex items-center px-4 justify-between">
         <p className="text-sm bg-[#D98855] w-24 rounded-3xl text-center p-1 ibrahim">
-          {artifact.length} Artifact{artifact.length !== 1 && "s"}
+          {artifact?.length || 0} Art{artifact?.length !== 1 && "s"}
         </p>
         <div>
           <label className="input ibrahim my-4 mx-auto text-black border border-[#D98855] input-bordered flex items-center gap-2">
             <input
               type="text"
+              value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="grow"
               placeholder="Search"
@@ -57,9 +58,15 @@ const AllArtifacts = () => {
         </div>
       </div>
       <div className="grid px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {artifact?.map((artifactCart) => (
-          <ArtifactCart key={artifactCart._id} card={artifactCart} />
-        ))}
+        {artifact.length > 0 ? (
+          artifact.map((artifactCart) => (
+            <ArtifactCart key={artifactCart._id} card={artifactCart} />
+          ))
+        ) : (
+          <p className="text-center col-span-full text-gray-500">
+            No artifacts found.
+          </p>
+        )}
       </div>
     </div>
   );

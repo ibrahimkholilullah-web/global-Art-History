@@ -38,7 +38,7 @@ const Navbar = () => {
           to="/AddArtifacts"
           className={({ isActive }) =>
             isActive
-              ? "border-b-2 border-white pb-1 text-[#D98855]"
+              ? "border-b-2 border-white pb-1 text-[#D98855]  "
               : "hover:border-b-2 hover:border-gray-300 text-white pb-1"
           }
         >

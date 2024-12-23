@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
     const location = useLocation()
     const from = location?.state || "/"
-    const [error, setError] = useState('')
+    const [error, setError] = useState('')    
+    const [passwordIcon, setPaawordIcon] = useState(false)
     const navigate = useNavigate()
     const {createUser,updateUserProfile,setUser,signInWithGoogle} = useContext(AuthContext)
     const handleGoogleSignIn = async () =>{
@@ -141,7 +143,7 @@ const Register = () => {
                 />
               </div>
   
-              <div className='mt-4'>
+              <div className='mt-4 relative'>
                 <div className='flex justify-between'>
                   <label
                     className='block mb-2 text-sm font-medium text-gray-600 '
@@ -156,8 +158,14 @@ const Register = () => {
                   autoComplete='current-password'
                   name='password'
                   className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                  type='password'
+                  type={passwordIcon ? "text" : "password"}
                 />
+                 <button type="button" onClick={() => setPaawordIcon(!passwordIcon)} className="absolute text-black top-10 right-5 "> 
+            {
+              passwordIcon ? <FaEye />
+              :<FaEyeSlash />
+            }
+            </button>
               </div>
               <div className='mt-6'>
                 <button

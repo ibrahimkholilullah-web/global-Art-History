@@ -4,10 +4,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
+import UserAuthToken from "../Page/UserAuthToken";
 
 const AddArtifact = () => {
 const {user} = useContext(AuthContext)
 const navigate = useNavigate()
+const useAuthAxiose = UserAuthToken() 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const from = e.target;
@@ -32,13 +34,13 @@ const navigate = useNavigate()
         like_count : 0 
     }
     try{
-        const {data} = await axios.post(`${import.meta.env.VITE_APP_URL}/artifact`, formData)
+        const {data} = await useAuthAxiose.post(`/artifact`, formData)
         console.log("Form submitted:", data);
         toast.success('success Fully Add Artifact data')
         from.reset()
         navigate('/allArtifacts')
     }catch(err){
-        toast.success(err.message)
+        toast.error(err.message)
     }
   };
 

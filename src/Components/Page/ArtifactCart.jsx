@@ -12,7 +12,10 @@ const ArtifactCart = ({card}) => {
         _id
     } = card || {}
     return (
-        <Link
+        <motion.div
+		whileHover={{scale: 1.05}} 
+		transition={{duration:0.5}}
+	   whileTap={{scale:0.50}}
 		
 		to={`/viewDitails/${_id}`} className="flex ibrahim border-2 border-[#D98855] flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
 	<div className="flex space-x-4">
@@ -43,7 +46,7 @@ const ArtifactCart = ({card}) => {
 		</div>
 		
 	</div>
-           </Link>
+           </motion.div>
     );
 };
 

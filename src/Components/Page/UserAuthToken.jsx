@@ -13,15 +13,16 @@ const UserAuthToken = () => {
         AuthAxiose.interceptors.response.use(res =>{
             return res
         }, (error)=>{
-            if(error){
+            if(error.status === 401 || error.status === 401){
                 logOut()
                 .then(()=>{
                     navigate('/login')
                 })
                 
             }
+            return Promise.reject(error)
         })
-    })
+    },[])
     return AuthAxiose
 };
 

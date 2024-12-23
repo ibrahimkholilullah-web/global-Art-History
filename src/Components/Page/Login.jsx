@@ -1,16 +1,18 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../Firebase/firebase.config';
-import loginLottfi from "../../../public/Login/Animation - 1734871721649.json"
 import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 const Login = () => {
     const navigate = useNavigate()
     const {user,signIn,signInWithGoogle} = useContext(AuthContext)
     const location = useLocation()
     const emailref = useRef() 
+    const [passwordIcon, setPaawordIcon] = useState(false)
     const handleGoogleSignIn = async () =>{
         try{
             signInWithGoogle()
@@ -52,12 +54,13 @@ const Login = () => {
         }
 
     }
+
     return (
        <div>
         <Helmet>
             <title>Login | G. art H. </title>
         </Helmet>
-         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
+         <div className='flex p-2 justify-center items-center min-h-[calc(100vh-306px)] my-12'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-[#D98855] text-white rounded-lg shadow-lg items-center  lg:max-w-4xl '>
         <div
           className='hidden  lg:block lg:w-1/2'
@@ -66,7 +69,7 @@ const Login = () => {
           <iframe height={500} className='mx-auto' src="https://lottie.host/embed/4732bd00-4405-4792-a8cc-91af315e22dd/sewYRIAW1I.lottie"></iframe>
         </div>
 
-        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
+        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 '>
           <div className='flex justify-center mx-auto'>
             <img className='w-auto h-7 sm:h-8' alt='' />
           </div>
@@ -126,12 +129,12 @@ const Login = () => {
                 id='LoggingEmailAddress'
                 autoComplete='email'
                 name='email'
-                className='block w-full px-4 py-2  bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
+                className='block w-full px-4 py-2 text-black bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
                 type='email'
               />
             </div>
 
-            <div className='mt-4'>
+            <div className='mt-4 relative'>
               <div className='flex justify-between'>
                 <label
                   className='block mb-2 text-sm font-medium  '
@@ -146,8 +149,14 @@ const Login = () => {
                 autoComplete='current-password'
                 name='password'
                 className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                type='password'
+                type={passwordIcon ? "text" : "password"}
               />
+               <button type="button" onClick={() => setPaawordIcon(!passwordIcon)} className="absolute text-black top-10 right-5 "> 
+            {
+              passwordIcon ? <FaEye />
+              :<FaEyeSlash />
+            }
+            </button>
             </div>
             <p className="mt-2">
               <a

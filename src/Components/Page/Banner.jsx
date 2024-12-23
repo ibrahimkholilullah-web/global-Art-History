@@ -3,8 +3,13 @@ import { Carousel, Typography } from "@material-tailwind/react";
 import slider1 from "../../assets/Image/slider1.jpg";
 import slider2 from "../../assets/Image/slider2.avif";
 import slider3 from "../../assets/Image/slider3.jpg";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Banner = () => {
+  const [text] = useTypewriter({
+    words: ['"Your Digital Gateway to Historical Artifact Management"'],
+    loop:0
+  })
   return (
     <Carousel className="h-[60vh] md:h-[80vh] border-2 border-[#D98855] p-1 rounded-xl">
       {/* Slide 1 */}
@@ -21,7 +26,7 @@ const Banner = () => {
               color="white"
               className="mb-4 text-xl ibragim md:text-4xl lg:text-5xl text-[#D98855] font-bold"
             >
-              "Your Digital Gateway to Historical Artifact Management"
+              <span><span>{text}</span><Cursor></Cursor></span>
             </Typography>
             <Typography
               variant="lead"
