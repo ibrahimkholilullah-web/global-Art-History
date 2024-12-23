@@ -70,7 +70,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm bg-[#302E2F] dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm bg-[#302E2F] border border-white dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             {pathName}
           </ul>
@@ -113,7 +113,7 @@ const Navbar = () => {
               </div>
               <details className="dropdown">
                 <summary className="">My Profile</summary>
-                <ul className="menu dropdown-content bg-[#302E2F] rounded-box z-[1] w-52 p-2 shadow">
+                <ul className="menu dropdown-content bg-[#302E2F] mr-1 border text-[10px] w-40 border-white rounded-box z-[1] p-2 shadow">
                   <li className='text-white'>
                 <Link to="/likedArtifacts">Liked Artifacts Page</Link>
               </li>

@@ -30,11 +30,11 @@ const AllArtifacts = () => {
             <title>All - Aritfacts | </title>
         </Helmet>
       <div className="flex items-center px-4 justify-between">
-        <p className="text-sm bg-blue-gray-200 w-24 rounded-3xl text-center p-1">
+        <p className="text-sm bg-[#D98855] w-24 rounded-3xl text-center p-1 ibrahim">
           {artifact.length} Artifact{artifact.length !== 1 && "s"}
         </p>
         <div>
-          <label className="input my-4 mx-auto text-black input-bordered flex items-center gap-2">
+          <label className="input ibrahim my-4 mx-auto text-black border border-[#D98855] input-bordered flex items-center gap-2">
             <input
               type="text"
               onChange={(e) => setSearch(e.target.value)}

@@ -14,19 +14,19 @@ const Banner = () => {
           alt="image 1"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/40">
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/60">
           <div className="w-11/12 text-center md:w-2/3 lg:w-1/2">
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-xl md:text-4xl lg:text-5xl font-bold"
+              className="mb-4 text-xl ibragim md:text-4xl lg:text-5xl text-[#D98855] font-bold"
             >
               "Your Digital Gateway to Historical Artifact Management"
             </Typography>
             <Typography
               variant="lead"
               color="white"
-              className="mb-8 text-sm md:text-lg lg:text-xl opacity-90"
+              className="mb-8 ibrahim text-sm md:text-lg lg:text-xl opacity-90"
             >
               Organize and explore historical treasures like never before. Our tracker ensures every artifact’s story is preserved, from its origin to its discovery, connecting the past to the present.
             </Typography>

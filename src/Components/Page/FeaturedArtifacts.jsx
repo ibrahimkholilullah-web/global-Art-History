@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 const FeaturedArtifacts = () => {
   const [artifact, setArtifact] = useState([]);
 
@@ -17,16 +16,16 @@ const FeaturedArtifacts = () => {
       const sortedArtifacts = data.sort((a, b) => b.like_count - a.like_count).slice(0, 6);
       setArtifact(sortedArtifacts);
     } catch (error) {
-      console.error("Error fetching artifacts:", error);
+      tost.error("Error fetching artifacts:", error);
     }
   };
 
   return (
-    <div className="featured-artifacts">
+    <div className="featured-artifacts ibrahim">
       <h2 className="text-center my-4 text-lg md:text-3xl text-[#D98855] font-bold border-b-2 py-2">Featured Artifacts</h2>
-      <div className="artifact-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="artifact-cards grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact.map((artifact) => (
-          <div key={artifact._id} className="max-w-xs border-2 border-white p-1 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+          <div key={artifact._id} className=" ibrahim border-2 border-white p-1 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
             <img
               src={artifact.artifactImage}
               alt={artifact.artifactName}
@@ -47,9 +46,9 @@ const FeaturedArtifacts = () => {
 
               <Link
                 to={`/viewDitails/${artifact._id}`}
-                className="flex items-center justify-center  w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
+                className="flex items-center justify-center  gap-4  w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
               >
-                Read more
+                See More Details   <FaAngleDoubleRight />
               </Link>
             </div>
           </div>

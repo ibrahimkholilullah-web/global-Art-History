@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import UserAuthToken from '../Page/UserAuthToken';
- 
+ import nodata  from "../../assets/Image/Nodata.png"
 const LikedArtifacts = () => {
     const { user } = useContext(AuthContext);
     const [likes, setLikes] = useState([]);
@@ -91,8 +91,7 @@ const LikedArtifacts = () => {
                 </table>
             ) : (
                 <div className="text-center py-10">
-                    <p className="text-gray-500">You haven’t liked any artifacts yet.</p>
-                </div>
+             <img className='mx-auto w-full md:h-[80vh]' src={nodata} alt="" />       </div>
             )}
         </div>
         </div>

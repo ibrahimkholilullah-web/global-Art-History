@@ -1,12 +1,14 @@
 import React from 'react';
 import extra1 from "../../assets/Image/extra1photo.jpg"
 import extra2 from "../../assets/Image/extra2photo.jpg"
+import '../../Style/ibrahim.css'
 const ExtraOne = () => {
+ 
     return (
-    <div className="bg-beige text-gray-800  p-10">
+    <div className="bg-beige text-gray-800  p-10 ibrahim">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative ibrahim">
             <img
               src={extra1} // Replace with your knight image URL
               alt="Knights"
@@ -22,8 +24,8 @@ const ExtraOne = () => {
             </div>
           </div>
           <div className="lg:w-1/2 mt-10 lg:mt-0 lg:ml-10">
-            <h1 className="md:text-4xl font-bold mb-6 text-[#D98855]">Historical Reenactment Group</h1>
-            <p className="md:text-lg text-sm leading-relaxed text-white">
+            <h1 className="md:text-4xl font-bold mb-6 text-[#D98855] ibrahim">Historical Reenactment Group</h1>
+            <p className="md:text-lg text-sm leading-relaxed text-white ibrahim">
               We specialise in the high Medieval period. Founded in 2005 in and around Manchester, 
               we now have members from all over the UK. Our interests cover the period from the early 
               middle ages and up to the Renaissance.

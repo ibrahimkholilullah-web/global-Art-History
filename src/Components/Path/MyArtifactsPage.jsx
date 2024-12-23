@@ -6,7 +6,8 @@ import MyAddCard from '../Page/MyAddCard';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 import UserAuthToken from '../Page/UserAuthToken';
-
+import Loading from '../PrivatedRouter/Loading';
+import nodata from "../../assets/Image/Nodata.png"
 const MyArtifactsPage = () => {
     const { user } = useContext(AuthContext);
     const [myAddArt, setMyAddArt] = useState([]);
@@ -30,7 +31,7 @@ const MyArtifactsPage = () => {
         }
     };
     if (loading) {
-        return <p>Loading liked artifacts...</p>;
+        return <Loading></Loading>
     }
     const handleDelete = async (id) =>{
         try{
@@ -93,7 +94,7 @@ const MyArtifactsPage = () => {
                 </table>
             ) : (
                 <div className="text-center py-10">
-                    <p className="text-gray-500">You haven’t My Add any artifacts yet.</p>
+                    <img className='mx-auto w-full md:h-[80vh]' src={nodata} alt="" />
                 </div>
             )}
         </div>

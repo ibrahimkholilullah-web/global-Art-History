@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const ArtifactCart = ({card}) => {
     const {
@@ -11,7 +12,9 @@ const ArtifactCart = ({card}) => {
         _id
     } = card || {}
     return (
-        <Link to={`/viewDitails/${_id}`} className="flex border-2 border-[#D98855] flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+        <Link
+		
+		to={`/viewDitails/${_id}`} className="flex ibrahim border-2 border-[#D98855] flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
 	<div className="flex space-x-4">
 		<img alt="" src={artifactImage} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
 		<div className="flex flex-col space-y-1">
@@ -38,6 +41,7 @@ const ArtifactCart = ({card}) => {
                 View Ditails
             </Link>
 		</div>
+		
 	</div>
            </Link>
     );
