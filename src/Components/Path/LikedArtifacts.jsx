@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import UserAuthToken from '../Page/UserAuthToken';
  import nodata  from "../../assets/Image/Nodata.png"
 import toast from 'react-hot-toast';
+import Loading from '../PrivatedRouter/Loading';
 const LikedArtifacts = () => {
     const { user } = useContext(AuthContext);
     const [likes, setLikes] = useState([]);
@@ -30,7 +31,7 @@ const LikedArtifacts = () => {
     };
 
     if (loading) {
-        return <p>Loading liked artifacts...</p>;
+        return <Loading></Loading>
     }
 
     return (

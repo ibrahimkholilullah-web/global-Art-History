@@ -4,12 +4,13 @@ import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import UserAuthToken from "../Page/UserAuthToken";
 import axios from "axios";
+import Loading from "../PrivatedRouter/Loading";
 
 const AllArtifacts = () => {
   const useAuthAxios = UserAuthToken(); // Assuming this provides an Axios instance with auth
   const [artifact, setArtifact] = useState([]);
   const [search, setSearch] = useState("");
-
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     const fetchArtifacts = async () => {
       try {
@@ -18,21 +19,23 @@ const AllArtifacts = () => {
         setArtifact(data);
       } catch (err) {
         toast.error("Failed to load artifacts. Please try again.");
-      }
+      } finally {
+        setLoading(false);
+    }
     };
 
     fetchArtifacts();
   }, [search, useAuthAxios]); // Dependency array includes `search` and `useAuthAxios`
-
+  if(loading){
+    return <Loading></Loading>
+  }
   return (
     <div>
       <Helmet>
         <title>All Artifacts | Your Website</title>
       </Helmet>
-      <div className="md:flex items-center px-4 justify-between">
-        <p className="text-sm bg-[#D98855] w-24 rounded-3xl text-center p-1 ibrahim">
-          {artifact?.length || 0} Art{artifact?.length !== 1 && "s"}
-        </p>
+      <div className=" items-center px-4 justify-between">
+       
         <div>
           <label className="input ibrahim my-4 mx-auto text-black border border-[#D98855] input-bordered flex items-center gap-2">
             <input
@@ -56,6 +59,9 @@ const AllArtifacts = () => {
             </svg>
           </label>
         </div>
+        <p className="text-sm bg-[#D98855] w-24 rounded-3xl text-center p-1 mb-2 ibrahim">
+          {artifact?.length || 0} Art{artifact?.length !== 1 && "s"}
+        </p>
       </div>
       <div className="grid px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact.length > 0 ? (

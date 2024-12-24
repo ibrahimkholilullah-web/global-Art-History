@@ -4,6 +4,7 @@ import ExtraOne from '../ExtraSection/ExtraOne';
 import FeaturedArtifacts from '../Page/FeaturedArtifacts';
 import { Helmet } from 'react-helmet-async';
 import ExtrapTwo from '../ExtraSection/ExtrapTwo';
+import ExtraFeatures from '../ExtraSection/ExtraFeatures';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <ExtraOne></ExtraOne>
             <FeaturedArtifacts></FeaturedArtifacts>
             <ExtrapTwo></ExtrapTwo>
+            <ExtraFeatures></ExtraFeatures>
         </div>
     );
 };

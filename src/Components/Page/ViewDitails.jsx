@@ -6,12 +6,14 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import UserAuthToken from './UserAuthToken';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
+import Loading from '../PrivatedRouter/Loading';
 
 const ViewDitails = () => {
     const { user } = useContext(AuthContext);
     const [artifact, setArtifact] = useState({});
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
+    const[loding, setLoading] = useState(true)
     const useAuthAxiose = UserAuthToken()
 
     useEffect(() => {
@@ -25,9 +27,13 @@ const ViewDitails = () => {
             setArtifact(data);
         } catch (error) {
             toast.error("Failed to fetch artifact data.");
+        } finally {
+            setLoading(false);
         }
     };
-
+    if(loding){
+        return <Loading></Loading>
+    }
     const checkLikedState = async () => {
         try {
             const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/likes/check`, {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { motion } from "framer-motion";
 const FeaturedArtifacts = () => {
   const [artifact, setArtifact] = useState([]);
 
@@ -27,8 +27,10 @@ const FeaturedArtifacts = () => {
       <h2 className="text-center my-4 text-lg md:text-3xl text-[#D98855] font-bold border-b-2 py-2">Featured Artifacts</h2>
       <div className="artifact-cards grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
         {artifact.map((artifact) => (
-          <div
-          key={artifact._id} className=" ibrahim border-2 border-white p-1 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+          <motion.div
+          whileHover={{ scale: [null, 1.05, 1.05] }}
+          transition={{ duration: 0.3 }}
+          key={artifact._id} className=" ibrahim border border-white p-1 shadow-md dark:bg-gray-50 dark:text-gray-800">
             <img
               src={artifact.artifactImage}
               alt={artifact.artifactName}
@@ -54,7 +56,7 @@ const FeaturedArtifacts = () => {
                 See More Details   <FaAngleDoubleRight />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <Link to="/allArtifacts" className="btn my-2 hover:bg-[#302E2F] bg-[#D98855] text-white border-2">

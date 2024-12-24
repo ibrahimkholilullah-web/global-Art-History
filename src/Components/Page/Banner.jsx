@@ -11,7 +11,7 @@ const Banner = () => {
     loop:0
   })
   return (
-    <Carousel className="h-[60vh] md:h-[80vh] border-2 border-[#D98855] p-1 rounded-xl">
+    <Carousel className="h-[60vh] md:h-[80vh]  border-2 border-[#D98855] p-1 rounded-xl">
       {/* Slide 1 */}
       <div className="relative h-full w-full">
         <img

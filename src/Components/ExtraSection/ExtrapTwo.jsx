@@ -3,13 +3,13 @@ import ex2 from "../../assets/Image/Ex2.avif"
 const ExtrapTwo = () => {
     return (
        
-            <div className="flex flex-wrap ibrahim md:my-8 lg:flex-nowrap items-center gap-8 p-6 lg:p-12 bg-[#302E2F] border rounded-lg">
+            <div className="flex flex-wrap ibrahim md:my-8 lg:flex-nowrap items-center gap-8 p-6 lg:p-12 bg-[#302E2F]  rounded-lg">
               {/* Image Section */}
-              <div className="w-full lg:w-1/2">
+              <div className="w-full">
                 <img
                   src={ex2} // Replace with your image URL
                   alt="The Great Museum"
-                  className="rounded-lg shadow-lg w-full ibrahim object-cover"
+                  className=" shadow-lg w-full ibrahim object-cover"
                 />
               </div>
         
