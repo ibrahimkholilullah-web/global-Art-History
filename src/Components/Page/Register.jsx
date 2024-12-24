@@ -49,8 +49,8 @@ const Register = () => {
          <Helmet>
             <title>Register | G. art H. </title>
         </Helmet>
-         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-        <div className='flex w-full items-center max-w-sm mx-auto overflow-hidden rounded-lg border-2 border-[#D98855] shadow-lg  lg:max-w-4xl '>
+         <div className='flex mx-1 justify-center items-center min-h-[calc(100vh-306px)] my-12'>
+        <div className='flex  w-full items-center max-w-sm mx-auto overflow-hidden rounded-lg border-2 border-[#D98855] shadow-lg  lg:max-w-4xl '>
           <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
             <div className='flex justify-center mx-auto'>
               <img className='w-auto h-7 sm:h-8' alt='' />

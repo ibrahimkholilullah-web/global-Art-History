@@ -18,7 +18,7 @@ const MyAddCard = ({card,inx,updateDelete}) => {
    
     return (
             <tr>
-            <th className='text-[#D98855]'> 
+            <th className='text-[#D98855] hidden md:table-cell '> 
             {inx + 1}
           </th>
           <td>
@@ -36,13 +36,13 @@ const MyAddCard = ({card,inx,updateDelete}) => {
               </div>
             </div>
           </td>
-          <td>
+          <td className='hidden md:table-cell'>
                 {presentLocation.substring(0,25)}
                 <br />
             <span className="badge badge-ghost badge-sm">{email}</span>
           </td>
-          <td>{like_count}</td>
-          <th className='flex text-2xl items-center gap-3'>
+          <td className='hidden md:table-cell'>{like_count}</td>
+          <th className='flex text-2xl items-center md:gap-3'>
                 <Link to={`/updateData/${_id}`} className=""><CiEdit /></Link>
                 <button className='text-[#D98855]' onClick={() => updateDelete(_id)}><MdDelete />
                 </button>

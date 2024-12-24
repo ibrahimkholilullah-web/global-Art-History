@@ -1,8 +1,26 @@
-# React + Vite
+# Projects Name 
+ Global Art History
+# Purpose
+ঐতিহাসিক নিদর্শন হলো অতীত সভ্যতার গুরুত্বপূর্ণ উপাদান, যা আমাদের ইতিহাস, সংস্কৃতি এবং ঐতিহ্যের সাথে সংযোগ স্থাপন করতে সহায়তা করে। এগুলোর প্রধান উদ্দেশ্য হলো:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ইতিহাস সংরক্ষণ: অতীতের ঘটনাবলী, জীবনধারা এবং সংস্কৃতির দলিল হিসেবে কাজ করা।
+শিক্ষা প্রদান: ভবিষ্যৎ প্রজন্মকে অতীতের শিক্ষা দিতে এবং তাদের ঐতিহ্য সম্পর্কে সচেতন করা।
+সংস্কৃতির বিকাশ: বিভিন্ন সময়ে বিভিন্ন সম্প্রদায়ের জীবনধারা এবং তাদের অবদান বোঝাতে সাহায্য করা।
+পর্যটন ও অর্থনীতি: ঐতিহাসিক নিদর্শন পর্যটন শিল্পে গুরুত্বপূর্ণ ভূমিকা পালন করে এবং স্থানীয় অর্থনীতিতে অবদান রাখে।
+ঐতিহ্য রক্ষা: একটি জাতির গর্ব ও পরিচয়ের অংশ হিসেবে ঐতিহ্য সংরক্ষণ করা।
+এই নিদর্শনগুলো আমাদের অতীতকে বর্তমানের সাথে সংযুক্ত করে এবং ভবিষ্যতের জন্য একটি মূল্যবান উত্তরাধিকার হিসেবে রয়ে যায়।
 
-Currently, two official plugins are available:
+আমার প্রজেক্ট এর নাম হলো Global Art History. এই প্রজেক্ট  একটি রেস্পনসিভ প্রজেক্ট। এই প্রজেক্ট এর মূল উদ্দেশ্য হচ্ছে একজন ইউজার কোন একটি Artifact অ্যাড করতে পারবে এবং এই ওয়েবসাইট ব্যবহার করে সমস্ত ইউজার দেখতে পারবে।
+# Live Url
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# key Feature
+ই ওয়েবসাইটের ভিতরে একটি হোমপেজ একটি Add Artifact, All Artifact path রয়েছে। হোম পেজের ভিতরে Carousel, Two Extra Section, one Futures and Featured Artifacts section রয়েছে।
+1. Featured Artifacts এর ভিতরে ছয়টি কার্ড দেখানো হবে এবং প্রত্যেকটি এর যে সবচেয়ে বেশি লাইক থাকবে সে গুলোকে  আগে দেখানো হবে।
+2. All Artifacts এটির ভিতর সমস্ত artificate card গুলো দেখানো হবে। প্রতেকটি কার্ডের চার থেকে পাঁচটি ডাটা দেখানো থাকবে সেখানে এবং প্রত্যেকটি কার্ড এর ভিউ ডিটেলস একটি বাটন থাকবে এবং তার পাশে লাইক কাউন্টার একটি বাটন থাকবে কেউ যদি view details ক্লিক করে। তাহলে তাকে ঐই কাডের ডিটেলস দেখাবে এবং সেখানে ডিটেলস এর ভিতরে ঢোকার পরে একটি লাইক বাটন আছে।  যদি কেউ লাইক বাটনে ক্লিক করে তাহলে একটি লাইক Add হবে।  যদি কেউ আবার ক্লিক করে তাহলে একটি লাইক কমবে।
+3. Add Artifacts এই পেয়ে একটি artificate এড করতে পারবে Name, photo ইত্যাদির মাধ্যমে।
+# npm Packages 
+1. npm react icon
+2. npm react responsive carousel
+3. npm TyperWritr
+4. npm react-helmet-async
+5. npm react-hot-toast

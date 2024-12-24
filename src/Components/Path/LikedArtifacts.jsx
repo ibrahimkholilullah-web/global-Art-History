@@ -49,9 +49,9 @@ const LikedArtifacts = () => {
                         <tr className='text-[#D98855]'> 
                             <th>No</th>
                             <th>Name</th>
-                            <th>Location</th>
-                            <th>User Email</th>
-                            <th>Details</th>
+                            <th className="hidden md:table-cell">Location</th>
+                            <th className="hidden md:table-cell">User Email</th>
+                            <th className="hidden md:table-cell">Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,13 +73,13 @@ const LikedArtifacts = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td className=' hidden md:table-cell '>
                                     {like.presentLocation}
                                     <br />
                                     <span className="badge badge-ghost badge-sm">{like.AuthEmail}</span>
                                 </td>
-                                <td>{like.email}</td>
-                                <td>
+                                <td className=' hidden md:table-cell'>{like.email}</td>
+                                <td className=' hidden md:table-cell '>
                                     <Link
                                         to={`/viewDitails/${like.artId}`}
                                         className="btn btn-ghost btn-xs text-[#D98855]"

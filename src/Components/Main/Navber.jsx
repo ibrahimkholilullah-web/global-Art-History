@@ -75,7 +75,7 @@ const Navbar = () => {
             {pathName}
           </ul>
         </div>
-        <NavLink to="/" className="btn btn-ghost md:text-xl">Global Art History</NavLink>
+        <NavLink to="/" className="btn btn-ghost md:text-xl">Global  <span className='text-[#D98855] text-xl md:text-3xl mb-1'>Art</span>History</NavLink>
       </div>
       <div className="navbar-center hidden lg:flex"></div>
       <div className="navbar-end">

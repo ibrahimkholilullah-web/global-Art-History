@@ -79,10 +79,10 @@ const MyArtifactsPage = () => {
                     {/* Table Header */}
                     <thead>
                         <tr className='text-[#D98855]'> 
-                            <th>No</th>
+                            <th className='hidden md:table-cell'>No</th>
                             <th>Name</th>
-                            <th>Location</th>
-                            <th>Like Count</th>
+                            <th className='hidden md:table-cell '>Location</th>
+                            <th className='hidden md:table-cell '>Like Count</th>
                             <th>E & D</th>
                         </tr>
                     </thead>

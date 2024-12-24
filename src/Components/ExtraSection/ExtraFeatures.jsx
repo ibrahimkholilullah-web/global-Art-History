@@ -16,7 +16,7 @@ const ExtraFeatures = () => {
           </div>
         </div>
         <div className="mt-4">
-          <h3 className="text-xl font-bold">Ibrahim Kholilullah</h3>
+          <h3 className="md:text-xl font-bold">Ibrahim Kholilullah</h3>
           <p className=" text-[#FDD835]">Global Art History</p>
         </div>
         <div className="mt-4">
@@ -31,13 +31,32 @@ const ExtraFeatures = () => {
         </div>
         <div>
             <h1 className='my-1'>My Best Projects</h1>
-            <div className='flex items-center justify-between mt-3'>
-            <a className=' inline-flex items-center gap-2 ' href="https://github.com/dashboard" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30}/><span className='text-sm'> My GitHub</span>
-             </a>
-                <a href='https://b10-a10-projects.firebaseapp.com' target='_blank' className=' border px-2 py-1 rounded-md text-[10px] bg-[#302E2F] text-white'>Projects 1</a>
-                <a href='https://b10-a9-projects.firebaseapp.com/' target='_blank'  className=' border px-2 py-1  rounded-md text-[10px] bg-[#302E2F] text-white'>Projects 2 </a>
-            </div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-3 space-y-2 md:space-y-0 md:space-x-4">
+  <a
+    className="inline-flex items-center gap-2"
+    href="https://github.com/dashboard"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaGithub size={30} />
+    <span className="text-sm">My GitHub</span>
+  </a>
+  <a
+    href="https://b10-a10-projects.firebaseapp.com"
+    target="_blank"
+    className="border px-3 py-1 rounded-md text-sm md:text-xs bg-[#302E2F] text-white hover:bg-[#1f1e1e] transition duration-300"
+  >
+    Project 1
+  </a>
+  <a
+    href="https://b10-a9-projects.firebaseapp.com/"
+    target="_blank"
+    className="border px-3 py-1 rounded-md text-sm md:text-xs bg-[#302E2F] text-white hover:bg-[#1f1e1e] transition duration-300"
+  >
+    Project 2
+  </a>
+</div>
+
         </div>
       </div>
     </div>
