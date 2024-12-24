@@ -36,7 +36,9 @@ const Register = () => {
           const result = await  createUser(email,pass)
           await updateUserProfile(name, photo)
           setUser({...result.user, displayName: name, PhotoURL: photo})
-          toast.success('SuccessFully Create user...!')
+          toast.success('SuccessFully Create user...!',{
+            position: "top-left"
+          })
           navigate(location?.state ? location.state : "/");
         }catch(err){
             toast.error(err.message)

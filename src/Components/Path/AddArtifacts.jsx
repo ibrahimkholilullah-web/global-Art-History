@@ -36,7 +36,9 @@ const useAuthAxiose = UserAuthToken()
     try{
         const {data} = await useAuthAxiose.post(`/artifact`, formData)
         console.log("Form submitted:", data);
-        toast.success('success Fully Add Artifact data')
+        toast.success('success Fully Add Artifact data',{
+          position: "top-left"
+        })
         from.reset()
         navigate('/allArtifacts')
     }catch(err){

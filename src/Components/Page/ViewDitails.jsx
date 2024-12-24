@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import UserAuthToken from './UserAuthToken';
+import { FaAngleDoubleLeft } from 'react-icons/fa';
 
 const ViewDitails = () => {
     const { user } = useContext(AuthContext);
@@ -34,7 +35,7 @@ const ViewDitails = () => {
             });
             setLiked(data.liked);
         } catch (error) {
-            console.error("Error checking liked state:", error);
+            toast.error(error.message);
         }
     };
 
@@ -112,7 +113,7 @@ const ViewDitails = () => {
                                     
                                      <svg
                                          xmlns="http://www.w3.org/2000/svg"
-                                         viewBox="0 0 512 512"
+                                         viewBox="0 0 512 512" 
                                          aria-label="Like"
                                          className="w-4 h-4 fill-current"
                                      >
@@ -121,11 +122,15 @@ const ViewDitails = () => {
                                  )}
                                  <span>{like_count}</span>
                              </button>
-
+                             
                         </div>
                     </div>
                     <img src={artifactImage} alt="" className="object-cover w-full rounded-md xl:col-span-3" />
                 </div>
+                <Link to='/allArtifacts' className='text-[#D98855]  px-1 rounded-lg'>
+                             <FaAngleDoubleLeft />
+
+                             </Link>
             </section>
         </div>
     );

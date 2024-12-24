@@ -36,7 +36,7 @@ const FeaturedArtifacts = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8">
               <div className="space-y-2">
-                <h2 className="md:text-3xl text-lg font-semibold text-[#D98855] tracking-wide">{artifact.artifactName}</h2>
+                <h2 className="md:text-xl text-lg font-semibold text-[#D98855] tracking-wide">{artifact.artifactName}</h2>
                 <button type="button" className="flex items-center p-1 space-x-1.5">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of likes" className="w-4 h-4 fill-current dark:text-violet-600">
 					<path d="M126.638,202.672H51.986a24.692,24.692,0,0,0-24.242,19.434,487.088,487.088,0,0,0-1.466,206.535l1.5,7.189a24.94,24.94,0,0,0,24.318,19.78h74.547a24.866,24.866,0,0,0,24.837-24.838V227.509A24.865,24.865,0,0,0,126.638,202.672ZM119.475,423.61H57.916l-.309-1.487a455.085,455.085,0,0,1,.158-187.451h61.71Z"></path>
@@ -57,7 +57,7 @@ const FeaturedArtifacts = () => {
           </div>
         ))}
       </div>
-      <Link to="/allArtifacts" className="btn my-2 bg-[#D98855] text-white border-2">
+      <Link to="/allArtifacts" className="btn my-2 hover:bg-[#302E2F] bg-[#D98855] text-white border-2">
         View All Artifacts <FaAngleDoubleRight />
       </Link>
     </div>
