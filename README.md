@@ -12,15 +12,24 @@
 
 আমার প্রজেক্ট এর নাম হলো Global Art History. এই প্রজেক্ট  একটি রেস্পনসিভ প্রজেক্ট। এই প্রজেক্ট এর মূল উদ্দেশ্য হচ্ছে একজন ইউজার কোন একটি Artifact অ্যাড করতে পারবে এবং এই ওয়েবসাইট ব্যবহার করে সমস্ত ইউজার দেখতে পারবে।
 # Live Url
-
+https://national-history.firebaseapp.com
 # key Feature
 ই ওয়েবসাইটের ভিতরে একটি হোমপেজ একটি Add Artifact, All Artifact path রয়েছে। হোম পেজের ভিতরে Carousel, Two Extra Section, one Futures and Featured Artifacts section রয়েছে।
 1. Featured Artifacts এর ভিতরে ছয়টি কার্ড দেখানো হবে এবং প্রত্যেকটি এর যে সবচেয়ে বেশি লাইক থাকবে সে গুলোকে  আগে দেখানো হবে।
 2. All Artifacts এটির ভিতর সমস্ত artificate card গুলো দেখানো হবে। প্রতেকটি কার্ডের চার থেকে পাঁচটি ডাটা দেখানো থাকবে সেখানে এবং প্রত্যেকটি কার্ড এর ভিউ ডিটেলস একটি বাটন থাকবে এবং তার পাশে লাইক কাউন্টার একটি বাটন থাকবে কেউ যদি view details ক্লিক করে। তাহলে তাকে ঐই কাডের ডিটেলস দেখাবে এবং সেখানে ডিটেলস এর ভিতরে ঢোকার পরে একটি লাইক বাটন আছে।  যদি কেউ লাইক বাটনে ক্লিক করে তাহলে একটি লাইক Add হবে।  যদি কেউ আবার ক্লিক করে তাহলে একটি লাইক কমবে।
 3. Add Artifacts এই পেয়ে একটি artificate এড করতে পারবে Name, photo ইত্যাদির মাধ্যমে।
+4. My Artifacts এই পেজে গেলে ইউজার যে Artifacts গুলো এড করেছে সেই সমস্ত অ্যাট্রিবিউট দেখাবে এবং সেখানে একটি আপডেট এবং একটি ডিলিট বাটন থাকবে যদি কেউ আপডেট বাটনে ক্লিক করে তাহলেই তাকে আরেকটি আপডেট পেজে নিয়ে যাবে এবং সেখান থেকে সে Artifacts গুলো আপডেট করতে পারবে এবং  যদি user deleted করতে চাই তাহলে সে ডিলিটও করতে পারবে।
+5. Like Artifacts এই পেইজে গেলে আমি যে Artifacts গুলোতে লাইক বাটনে ক্লিক করেছি এই সমস্ত আর্টিফেক্ট গুলো আমাকে দেখাবে।
 # npm Packages 
 1. npm react icon
 2. npm react responsive carousel
 3. npm TyperWritr
 4. npm react-helmet-async
 5. npm react-hot-toast
+6. npm lottify add
+
+# Optional (But Highly Recommended):
+1. Tailwind Css libaray :  mamba Ui
+2. faemer motion use 
+3. Use spinner
+4. Add one Future future to differentiate your project.

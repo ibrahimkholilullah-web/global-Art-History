@@ -13,7 +13,6 @@ const ViewDitails = () => {
     const [artifact, setArtifact] = useState({});
     const [liked, setLiked] = useState(false);
     const { id } = useParams();
-    const[loding, setLoading] = useState(true)
     const useAuthAxiose = UserAuthToken()
 
     useEffect(() => {
@@ -27,13 +26,9 @@ const ViewDitails = () => {
             setArtifact(data);
         } catch (error) {
             toast.error("Failed to fetch artifact data.");
-        } finally {
-            setLoading(false);
-        }
+        } 
     };
-    if(loding){
-        return <Loading></Loading>
-    }
+   
     const checkLikedState = async () => {
         try {
             const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/likes/check`, {
@@ -58,7 +53,9 @@ const ViewDitails = () => {
 
             setLiked(response.data.liked);
             fatchingData();
-            toast.success(response.data.message);
+            toast.success(response.data.message,{
+                position: "top-center"
+            });
         } catch (error) {
             toast.error(error.response?.data || "An error occurred.");
         }

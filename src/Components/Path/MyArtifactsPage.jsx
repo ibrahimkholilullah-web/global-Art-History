@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import MyAddCard from '../Page/MyAddCard';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
@@ -25,7 +24,7 @@ const MyArtifactsPage = () => {
                 setMyAddArt(data);
             }
         } catch (error) {
-            console.error("Error fetching liked artifacts:", error);
+            toast.error("Error fetching My Artifacts.");
         } finally {
             setLoading(false);
         }
@@ -38,7 +37,7 @@ const MyArtifactsPage = () => {
            const {data} =  await axios.delete(`${import.meta.env.VITE_APP_URL}/artifact/${id}`)
            toast.success('Sucessfully Delete Data')
            fetchData()
-        }catch(err){
+        }catch(error){
             toast.error(err.message)
         }
         
@@ -94,7 +93,7 @@ const MyArtifactsPage = () => {
                 </table>
             ) : (
                 <div className="text-center py-10">
-                    <img className='mx-auto w-full md:h-[80vh]' src={nodata} alt="" />
+                    <img className='mx-auto w-full md:h-[60vh]' src={nodata} alt="" />
                 </div>
             )}
         </div>

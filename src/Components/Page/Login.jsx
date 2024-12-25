@@ -6,6 +6,8 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../Firebase/firebase.config';
 import { Helmet } from 'react-helmet-async';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import loginPhoto from "../../assets/Image/login.jpg"
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -65,10 +67,10 @@ const Login = () => {
          <div className='flex p-2 justify-center items-center min-h-[calc(100vh-306px)] my-12'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-[#D98855] text-white rounded-lg shadow-lg items-center  lg:max-w-4xl '>
         <div
-          className='hidden  lg:block lg:w-1/2'
+          className='hidden mx-autso  lg:block lg:w-1/2'
           
         >
-          <iframe height={500} className='mx-auto' src="https://lottie.host/embed/4732bd00-4405-4792-a8cc-91af315e22dd/sewYRIAW1I.lottie"></iframe>
+          <img className='mx-auto w-[400px] h-[400px] rounded-lg border p-1 ' src={loginPhoto} alt="" />
         </div>
 
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 '>

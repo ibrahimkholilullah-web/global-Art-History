@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
@@ -33,16 +32,19 @@ const useAuthAxiose = UserAuthToken()
         discoveredBy,presentLocation,name,email,
         like_count : 0 
     }
-    try{
-        const {data} = await useAuthAxiose.post(`/artifact`, formData)
-        console.log("Form submitted:", data);
-        toast.success('success Fully Add Artifact data',{
-          position: "top-left"
-        })
-        from.reset()
-        navigate('/allArtifacts')
-    }catch(err){
-        toast.error(err.message)
+    try {
+      await useAuthAxiose.post(`/artifact`, formData);
+      form.reset();
+      navigate("/allArtifacts")
+      toast.success("Successfully added artifact data!", {
+        position: "top-left",
+      });
+    } catch (error) {
+      console.error("Error adding artifact:", error);
+      toast.error(
+        error.response?.data?.message || "Failed to add artifact. Please try again.",
+        { position: "top-right" }
+      );
     }
   };
 

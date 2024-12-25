@@ -4,6 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { p } from 'motion/react-client';
 
 const Register = () => {
     const location = useLocation()
@@ -11,7 +12,9 @@ const Register = () => {
     const [error, setError] = useState('')    
     const [passwordIcon, setPaawordIcon] = useState(false)
     const navigate = useNavigate()
+    const [loding, setLoading] = useState(true)
     const {createUser,updateUserProfile,setUser,signInWithGoogle} = useContext(AuthContext)
+    if(!loding) return <p>Loding</p>
     const handleGoogleSignIn = async () =>{
         try{
             signInWithGoogle()
@@ -202,7 +205,7 @@ const Register = () => {
             className='hidden bg-cover bg-center lg:block lg:w-1/2'
             
           >
-                      <iframe height={500} className='mx-auto' src="https://lottie.host/embed/4732bd00-4405-4792-a8cc-91af315e22dd/sewYRIAW1I.lottie"></iframe>
+          {location ? <iframe height={500} className='mx-auto' src="https://lottie.host/embed/4732bd00-4405-4792-a8cc-91af315e22dd/sewYRIAW1I.lottie"></iframe> :  'data'}
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
-    //   errorElement: <ErrorPage></ErrorPage>,
+      errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
         path:'/',
@@ -53,7 +53,6 @@ const router = createBrowserRouter([
         {
             path:'/updateData/:id',
             element: <PrivateRouter><UpdatePage></UpdatePage></PrivateRouter>,
-            // loader: ({params}) => fetch(`${import.meta.env.VITE_APP_URL}/artifact/${params.id}`) 
         }
     ]
     },

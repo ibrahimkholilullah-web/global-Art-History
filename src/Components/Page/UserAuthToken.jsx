@@ -3,8 +3,8 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 const AuthAxiose = axios.create({
-    // baseURL: "https://assignment-11-server-brown-rho.vercel.app",
-    baseURL: "http://localhost:5000",
+    baseURL: "https://assignment-11-server-brown-rho.vercel.app",
+    // baseURL: "http://localhost:5000",
     withCredentials: true
 })
 const UserAuthToken = () => {
@@ -21,9 +21,9 @@ const UserAuthToken = () => {
                 })
                 
             }
-            return Promise.reject(error)
+            // return Promise.reject(error)
         })
-    },[])
+    },[logOut, navigate])
     return AuthAxiose
 };
 

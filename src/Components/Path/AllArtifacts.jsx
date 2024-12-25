@@ -17,7 +17,7 @@ const AllArtifacts = () => {
         const { data } = await useAuthAxios.get(`/artifact?searchParams=${encodeURIComponent(search)}`
         );
         setArtifact(data);
-      } catch (err) {
+      } catch (error) {
         toast.error("Failed to load artifacts. Please try again.");
       } finally {
         setLoading(false);
