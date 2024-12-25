@@ -8,27 +8,31 @@ import UserAuthToken from './UserAuthToken';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
 import Loading from '../PrivatedRouter/Loading';
 
-const ViewDitails = () => {
+const ViewDetails = () => {
     const { user } = useContext(AuthContext);
     const [artifact, setArtifact] = useState({});
     const [liked, setLiked] = useState(false);
+    const [loading, setLoading] = useState(true); // Loading state
     const { id } = useParams();
-    const useAuthAxiose = UserAuthToken()
+    const useAuthAxios = UserAuthToken();
 
     useEffect(() => {
-        fatchingData();
+        fetchData();
         checkLikedState();
     }, [id]);
 
-    const fatchingData = async () => {
+    const fetchData = async () => {
+        setLoading(true);
         try {
-            const { data } = await useAuthAxiose.get(`/artifact/${id}`);
+            const { data } = await useAuthAxios.get(`/artifact/${id}`);
             setArtifact(data);
         } catch (error) {
             toast.error("Failed to fetch artifact data.");
-        } 
+        } finally {
+            setLoading(false);
+        }
     };
-   
+
     const checkLikedState = async () => {
         try {
             const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/likes/check`, {
@@ -52,9 +56,9 @@ const ViewDitails = () => {
             });
 
             setLiked(response.data.liked);
-            fatchingData();
-            toast.success(response.data.message,{
-                position: "top-center"
+            fetchData();
+            toast.success(response.data.message, {
+                position: "top-center",
             });
         } catch (error) {
             toast.error(error.response?.data || "An error occurred.");
@@ -74,6 +78,12 @@ const ViewDitails = () => {
         email,
         like_count,
     } = artifact || {};
+
+    if (loading) {
+        return (
+            <Loading></Loading>
+        );
+    }
 
     return (
         <div>
@@ -97,46 +107,43 @@ const ViewDitails = () => {
                             <p className="text-sm text-left md:text-center">Name: {name}</p>
                             <p className="text-sm text-left md:text-center">Email: {email}</p>
                             <button
-                                 onClick={toggleLike}
-                                 type="button"
-                                 className={`flex items-center p-1 my-4 space-x-1.5 ${
-                                     liked ? "text-red-500" : "text-gray-500"
-                                 }`}
-                             >
-                                 {liked ? (
-                                     <svg
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         viewBox="0 0 512 512"
-                                         aria-label="Unlike"
-                                         className="w-4 h-4 fill-current"
-                                     >
-                                         <path d="M462.3 62.7C407 7.4 324.8 24 256 79.3 187.2 24 105 7.4 49.7 62.7-16.6 128.9 23.1 230.8 91.6 285.3L239 430.7a24 24 0 0034 0l147.4-145.4c68.5-54.5 108.2-156.4 42.9-222.6z"></path>
-                                     </svg>
-                                 ) : (
-                                    
-                                     <svg
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         viewBox="0 0 512 512" 
-                                         aria-label="Like"
-                                         className="w-4 h-4 fill-current"
-                                     >
-                                         <path d="M256 469.3c-9.1 0-17.8-3.3-24.6-9.4L24.6 256.9C-27 211.2-12.6 136.4 44.4 95.6 92.5 60.6 156.7 71.5 204.8 114.2L256 160l51.2-45.8c48.1-42.7 112.3-53.6 160.4-18.6 57 40.8 71.4 115.6 19.8 161.3L280.6 459.9c-6.8 6.1-15.5 9.4-24.6 9.4z"></path>
-                                     </svg>
-                                 )}
-                                 <span>{like_count}</span>
-                             </button>
-                             
+                                onClick={toggleLike}
+                                type="button"
+                                className={`flex items-center p-1 my-4 space-x-1.5 ${
+                                    liked ? "text-red-500" : "text-gray-500"
+                                }`}
+                            >
+                                {liked ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512"
+                                        aria-label="Unlike"
+                                        className="w-4 h-4 fill-current"
+                                    >
+                                        <path d="M462.3 62.7C407 7.4 324.8 24 256 79.3 187.2 24 105 7.4 49.7 62.7-16.6 128.9 23.1 230.8 91.6 285.3L239 430.7a24 24 0 0034 0l147.4-145.4c68.5-54.5 108.2-156.4 42.9-222.6z"></path>
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512"
+                                        aria-label="Like"
+                                        className="w-4 h-4 fill-current"
+                                    >
+                                        <path d="M256 469.3c-9.1 0-17.8-3.3-24.6-9.4L24.6 256.9C-27 211.2-12.6 136.4 44.4 95.6 92.5 60.6 156.7 71.5 204.8 114.2L256 160l51.2-45.8c48.1-42.7 112.3-53.6 160.4-18.6 57 40.8 71.4 115.6 19.8 161.3L280.6 459.9c-6.8 6.1-15.5 9.4-24.6 9.4z"></path>
+                                    </svg>
+                                )}
+                                <span>{like_count}</span>
+                            </button>
                         </div>
                     </div>
                     <img src={artifactImage} alt="" className="object-cover w-full rounded-md xl:col-span-3" />
                 </div>
-                <Link to='/allArtifacts' className='text-[#D98855]  px-1 rounded-lg'>
-                             <FaAngleDoubleLeft />
-
-                             </Link>
+                <Link to="/allArtifacts" className="text-[#D98855] px-1 rounded-lg">
+                    <FaAngleDoubleLeft />
+                </Link>
             </section>
         </div>
     );
 };
 
-export default ViewDitails;
+export default ViewDetails;

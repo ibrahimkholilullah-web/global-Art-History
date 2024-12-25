@@ -29,7 +29,7 @@ const ArtifactCart = ({card}) => {
 	</div>
 	<div className="flex flex-wrap justify-between">
 		
-		<div className="flex items-center gap-32 justify-between">
+		<div className="flex items-center gap-20 md:gap-32 justify-between">
 			
 			<div>
 			<button type="button" className="flex items-center p-1 space-x-1.5">
@@ -40,7 +40,7 @@ const ArtifactCart = ({card}) => {
 				<span>{like_count}</span>
 			</button>
 			</div>
-           <div className='text-right'>
+           <div className='text-right '>
 		   <Link to={`/viewDitails/${_id}`} type='button'>
                 View Ditails
             </Link>

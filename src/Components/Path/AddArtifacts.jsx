@@ -32,22 +32,20 @@ const useAuthAxiose = UserAuthToken()
         discoveredBy,presentLocation,name,email,
         like_count : 0 
     }
-    try {
-      await useAuthAxiose.post(`/artifact`, formData);
-      form.reset();
-      navigate("/allArtifacts")
-      toast.success("Successfully added artifact data!", {
-        position: "top-left",
-      });
+    try{
+    const res =  await useAuthAxiose.post(`/artifact`, formData)
+    if(!res.statusText === "OK") return
+    from.reset()
+    navigate('/allArtifacts')
+    toast.success('success Fully Add Artifact data',{
+     position: "top-left"
+   })
     } catch (error) {
-      console.error("Error adding artifact:", error);
-      toast.error(
-        error.response?.data?.message || "Failed to add artifact. Please try again.",
-        { position: "top-right" }
-      );
+        toast.error('Failed to load artifacts. Please try again.')
     }
-  };
 
+
+   }
   return (
     <div className="px-4">
        <Helmet>
