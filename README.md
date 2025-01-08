@@ -1,35 +1,97 @@
-# Projects Name 
- Global Art History
-# Purpose
-ঐতিহাসিক নিদর্শন হলো অতীত সভ্যতার গুরুত্বপূর্ণ উপাদান, যা আমাদের ইতিহাস, সংস্কৃতি এবং ঐতিহ্যের সাথে সংযোগ স্থাপন করতে সহায়তা করে। এগুলোর প্রধান উদ্দেশ্য হলো:
+# 🌏 Global Art History
+A responsive web application to preserve, showcase, and explore historical artifacts.
 
-ইতিহাস সংরক্ষণ: অতীতের ঘটনাবলী, জীবনধারা এবং সংস্কৃতির দলিল হিসেবে কাজ করা।
-শিক্ষা প্রদান: ভবিষ্যৎ প্রজন্মকে অতীতের শিক্ষা দিতে এবং তাদের ঐতিহ্য সম্পর্কে সচেতন করা।
-সংস্কৃতির বিকাশ: বিভিন্ন সময়ে বিভিন্ন সম্প্রদায়ের জীবনধারা এবং তাদের অবদান বোঝাতে সাহায্য করা।
-পর্যটন ও অর্থনীতি: ঐতিহাসিক নিদর্শন পর্যটন শিল্পে গুরুত্বপূর্ণ ভূমিকা পালন করে এবং স্থানীয় অর্থনীতিতে অবদান রাখে।
-ঐতিহ্য রক্ষা: একটি জাতির গর্ব ও পরিচয়ের অংশ হিসেবে ঐতিহ্য সংরক্ষণ করা।
-এই নিদর্শনগুলো আমাদের অতীতকে বর্তমানের সাথে সংযুক্ত করে এবং ভবিষ্যতের জন্য একটি মূল্যবান উত্তরাধিকার হিসেবে রয়ে যায়।
+## ✨ Purpose
+   Historical artifacts connect us with the past, offering a window into our history, culture, and traditions. This project aims to:
+   
+   * Preserve History: Serve as a digital archive of past events, lifestyles, and cultures.
+   * Educate: Inspire future generations to learn and understand cultural heritage.
+   * Support Tourism: Promote tourism by showcasing cultural treasures.
+   * Protect Heritage: Act as a platform for safeguarding artifacts as a shared legacy.
+## 🎯 Features
+### 🏠 Home Page
 
-আমার প্রজেক্ট এর নাম হলো Global Art History. এই প্রজেক্ট  একটি রেস্পনসিভ প্রজেক্ট। এই প্রজেক্ট এর মূল উদ্দেশ্য হচ্ছে একজন ইউজার কোন একটি Artifact অ্যাড করতে পারবে এবং এই ওয়েবসাইট ব্যবহার করে সমস্ত ইউজার দেখতে পারবে।
-# Live Url
-https://national-history.firebaseapp.com
-# key Feature
-ই ওয়েবসাইটের ভিতরে একটি হোমপেজ একটি Add Artifact, All Artifact path রয়েছে। হোম পেজের ভিতরে Carousel, Two Extra Section, one Futures and Featured Artifacts section রয়েছে।
-1. Featured Artifacts এর ভিতরে ছয়টি কার্ড দেখানো হবে এবং প্রত্যেকটি এর যে সবচেয়ে বেশি লাইক থাকবে সে গুলোকে  আগে দেখানো হবে।
-2. All Artifacts এটির ভিতর সমস্ত artificate card গুলো দেখানো হবে। প্রতেকটি কার্ডের চার থেকে পাঁচটি ডাটা দেখানো থাকবে সেখানে এবং প্রত্যেকটি কার্ড এর ভিউ ডিটেলস একটি বাটন থাকবে এবং তার পাশে লাইক কাউন্টার একটি বাটন থাকবে কেউ যদি view details ক্লিক করে। তাহলে তাকে ঐই কাডের ডিটেলস দেখাবে এবং সেখানে ডিটেলস এর ভিতরে ঢোকার পরে একটি লাইক বাটন আছে।  যদি কেউ লাইক বাটনে ক্লিক করে তাহলে একটি লাইক Add হবে।  যদি কেউ আবার ক্লিক করে তাহলে একটি লাইক কমবে।
-3. Add Artifacts এই পেয়ে একটি artificate এড করতে পারবে Name, photo ইত্যাদির মাধ্যমে।
-4. My Artifacts এই পেজে গেলে ইউজার যে Artifacts গুলো এড করেছে সেই সমস্ত অ্যাট্রিবিউট দেখাবে এবং সেখানে একটি আপডেট এবং একটি ডিলিট বাটন থাকবে যদি কেউ আপডেট বাটনে ক্লিক করে তাহলেই তাকে আরেকটি আপডেট পেজে নিয়ে যাবে এবং সেখান থেকে সে Artifacts গুলো আপডেট করতে পারবে এবং  যদি user deleted করতে চাই তাহলে সে ডিলিটও করতে পারবে।
-5. Like Artifacts এই পেইজে গেলে আমি যে Artifacts গুলোতে লাইক বাটনে ক্লিক করেছি এই সমস্ত আর্টিফেক্ট গুলো আমাকে দেখাবে।
-# npm Packages 
-1. npm react icon
-2. npm react responsive carousel
-3. npm TyperWritr
-4. npm react-helmet-async
-5. npm react-hot-toast
-6. npm lottify add
+   * Dynamic Carousel displaying featured artifacts.
+   * Sections for Highlights and Featured Artifacts.
+   * Featured artifacts are sorted by the most likes.
 
-# Optional (But Highly Recommended):
-1. Tailwind Css libaray :  mamba Ui
-2. faemer motion use 
-3. Use spinner
-4. Add one Future future to differentiate your project.
+## 📋 All Artifacts Page
+
+   * Displays all artifact cards with brief details.
+   * Includes View Details and Like Counter functionality. 
+
+## ➕ Add Artifacts Page
+
+   * Users can add artifacts with details like name, photo, and description.
+## 🖼️ My Artifacts Page
+
+   * Displays artifacts added by the user.
+   * Includes options to Update or Delete artifacts.
+
+## ❤️ Liked Artifacts Page
+   
+   * Displays all artifacts liked by the user.
+👍 Like Button
+   * Allows users to like/unlike artifacts dynamically.
+🔧 Technologies Used
+
+### Frontend
+
+   * React.js: For building the user interface.
+   * Tailwind CSS: For responsive and modern styling.
+   * Mamba UI: For pre-built styled components.
+   * Framer Motion: For animations and transitions.
+
+### Backend
+
+   * Node.js: For server-side logic.
+   * Express.js: For handling API requests.
+   * MongoDB: For database management.
+
+### Packages
+
+   * React Icons: For integrating beautiful icons.
+   * React Responsive Carousel: For creating sliders and carousels.
+   * React Simple Typewriter: For dynamic typing effects.
+   * React Helmet Async: For SEO optimization.
+   * React Hot Toast: For notifications.
+   * Lottie React: For stunning animations.
+
+
+### 🛠️ Setup and Installation
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/global-art-history.git  
+
+### Navigate to the project directory:
+
+bash
+Copy code
+cd global-art-history  
+Install dependencies:
+
+bash
+Copy code
+npm install  
+Start the development server:
+
+bash
+Copy code
+npm start 
+
+### Open the app in your browser:
+
+bash
+Copy code
+http://localhost:3000  
+
+### 📌 Key Features in Action
+Fully responsive design across all devices.
+Interactive like buttons and detailed artifact views.
+Admin capabilities to update and delete artifacts.
+
+### 🤝 Contributing
+Contributions are welcome! Feel free to fork this repository, create a feature branch, and submit a pull request.
+
