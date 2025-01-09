@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel, Typography } from "@material-tailwind/react";
-import slider1 from "../../assets/Image/slider1.jpg";
-import slider2 from "../../assets/Image/slider2.avif";
-import slider3 from "../../assets/Image/slider3.jpg";
+import slider1 from "../../assets/Update Photo/pexels-roman-odintsov-5319837.jpg";
+import slider2 from "../../assets/Update Photo/pexels-roman-odintsov-6422209.jpg";
+import slider3 from "../../assets/Update Photo/pexels-shvets-2570068.jpg";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Banner = () => {
@@ -11,7 +11,8 @@ const Banner = () => {
     loop:0
   })
   return (
-    <Carousel className="h-[60vh] md:h-[80vh]  border-2 border-[#D98855] p-1 rounded-xl">
+<div className='bg-[#302E2F]  '>
+<Carousel className="md:h-[60vh] bg-cover lg:h-[80vh] mx-auto w-full">
       {/* Slide 1 */}
       <div className="relative h-full w-full">
         <img
@@ -19,7 +20,7 @@ const Banner = () => {
           alt="image 1"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/60">
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
           <div className="w-11/12 text-center md:w-2/3 lg:w-1/2">
             <Typography
               variant="h1"
@@ -93,6 +94,7 @@ const Banner = () => {
         </div>
       </div>
     </Carousel>
+</div>
   );
 };
 
