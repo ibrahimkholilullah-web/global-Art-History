@@ -63,7 +63,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/global-art-history.git  
+git clone https://github.com/ibrahimkholilullah-web/global-Art-History.git
 
 ### Navigate to the project directory:
 
