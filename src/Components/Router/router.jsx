@@ -11,6 +11,7 @@ import LikedArtifacts from "../Path/LikedArtifacts";
 import MyArtifactsPage from "../Path/MyArtifactsPage";
 import UpdatePage from "../Page/UpdatePage";
 import ErrorPage from "../Page/ErrorPage";
+import Contact from "../Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         {
             path:'/updateData/:id',
             element: <PrivateRouter><UpdatePage></UpdatePage></PrivateRouter>,
+        },
+        {
+            path:'/contact',
+            element:<Contact></Contact>
         }
     ]
     },

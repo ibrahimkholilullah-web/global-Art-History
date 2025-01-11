@@ -1,0 +1,72 @@
+ [
+      {
+        "no": 1,
+        "image": "https://www.shutterstock.com/image-photo/head-shot-handsome-millennial-30s-600nw-1854710668.jpg",
+        "name": "Rosetta Stone",
+        "description": "A granodiorite stele inscribed with a decree in three scripts: Greek, Demotic, and Egyptian hieroglyphs. It was key to deciphering ancient Egyptian hieroglyphics.",
+        "rating": 4.9
+      },
+      {
+        "no": 2,
+        "image": "https://www.shutterstock.com/image-photo/happy-young-man-sitting-home-260nw-2248472067.jpg",
+        "name": "Terracotta Army",
+        "description": "A collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China, buried with him to protect him in the afterlife.",
+        "rating": 4.8
+      },
+      {
+        "no": 3,
+        "image": "https://www.shutterstock.com/image-photo/young-adult-smiling-happy-pretty-260nw-2280122897.jpg",
+        "name": "Mona Lisa",
+        "description": "A portrait painting by Leonardo da Vinci, renowned for its enigmatic smile and mastery of Renaissance techniques.",
+        "rating": 4.7
+      },
+      {
+        "no": 4,
+        "image": "https://www.shutterstock.com/image-photo/grandmother-senior-woman-old-mature-260nw-2330093459.jpg",
+        "name": "Dead Sea Scrolls",
+        "description": "Ancient Jewish manuscripts discovered near the Dead Sea, including the oldest known biblical texts.",
+        "rating": 4.9
+      },
+      {
+        "no": 5,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCuv-A6rNfIi8b4PeMRg-8e0_Q0NnCWjCbYQ&s",
+        "name": "Tutankhamun’s Mask",
+        "description": "A gold funerary mask of the Egyptian Pharaoh Tutankhamun, signifying his royal status and divinity.",
+        "rating": 4.8
+      },
+      {
+        "no": 6,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIZadAcTXliwL8jMAiIVlIdK6_dWTWYt3CWZlUTeZGooTYK7w2lwr9Nip7F9ndaE8Na2A&usqp=CAU",
+        "name": "Antikythera Mechanism",
+        "description": "An ancient Greek analog computer used to predict astronomical positions and eclipses for calendrical and astrological purposes.",
+        "rating": 4.6
+      },
+      {
+        "no": 7,
+        "image": "https://www.shutterstock.com/image-photo/happy-millennial-30s-bearded-man-260nw-2412728361.jpg",
+        "name": "Code of Hammurabi",
+        "description": "A basalt stele inscribed with one of the earliest and most complete written legal codes from ancient Babylon.",
+        "rating": 4.8
+      },
+      {
+        "no": 8,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtRxKeX31U3B6KjUAz8Du2FvErcvQNJ1jeJg&s",
+        "name": "Stonehenge",
+        "description": "A prehistoric stone circle in England, its purpose remains a subject of research and speculation.",
+        "rating": 4.7
+      },
+      {
+        "no": 9,
+        "image": "https://www.healthdigest.com/img/gallery/reasons-why-its-actually-healthier-to-be-single/single-people-may-have-fewer-regrets-in-life-1596475005.jpg",
+        "name": "Venus of Willendorf",
+        "description": "A small Paleolithic figurine of a woman, symbolizing fertility and possibly used as a talisman.",
+        "rating": 4.5
+      },
+      {
+        "no": 10,
+        "image": "https://st2.depositphotos.com/3261171/8561/i/450/depositphotos_85614742-stock-photo-pleasant-girl-resting-on-the.jpg",
+        "name": "Bayeux Tapestry",
+        "description": "An embroidered cloth depicting the events leading up to the Norman conquest of England in 1066.",
+        "rating": 4.6
+      }
+    ]

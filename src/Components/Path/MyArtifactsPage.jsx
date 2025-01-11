@@ -66,12 +66,12 @@ const MyArtifactsPage = () => {
    
        }
     return (
-       <div>
+       <div className='container mx-auto min-h-screen'>
          <Helmet>
             <title>My Artifact sPage</title>
         </Helmet>
-        <h1 className='text-2xl m-2 font-bold'>My Artifacts Page</h1>
-        <p className='m-2 text-sm bg-[#D98855] w-20 text-center rounded-xl'>{myAddArt.length} Art</p>
+        <h1 className='text-2xl text-[#D1AF78] my-8 border-[#D98848] border-b-2 w-60 text-center mx-auto pb-2 m-2 font-bold'>My Artifacts Page</h1>
+        <p className='m-2 text-sm bg-[#D98855] w-20 text-center text-white font-style rounded-xl'>{myAddArt.length} Art</p>
          <div className="overflow-x-auto m-2 border p-2 rounded-lg ">
             {myAddArt.length > 0 ? (
                 <table className="table">
@@ -93,7 +93,7 @@ const MyArtifactsPage = () => {
                 </table>
             ) : (
                 <div className="text-center py-10">
-                    <img className='mx-auto w-full md:h-[60vh]' src={nodata} alt="" />
+                    <p className='text-[#D98848] uppercase font-style'>No More DAta</p>
                 </div>
             )}
         </div>

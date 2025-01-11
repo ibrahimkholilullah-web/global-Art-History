@@ -30,14 +30,14 @@ const AllArtifacts = () => {
     return <Loading></Loading>
   }
   return (
-    <div>
+    <div className=" container mx-auto pb-10">
       <Helmet>
         <title>All Artifacts | Your Website</title>
       </Helmet>
       <div className=" items-center px-4 justify-between">
        
         <div>
-          <label className="input ibrahim my-4 mx-auto text-black border border-[#D98855] input-bordered flex items-center gap-2">
+          <label className="input w-8/12 rounded-3xl bg-blue-gray-50 text-black ibrahim my-4 mx-auto  font-style border-[#D98855] input-bordered flex items-center gap-2">
             <input
               type="text"
               value={search}
@@ -49,7 +49,7 @@ const AllArtifacts = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="h-4 w-4 opacity-70"
+              className="h-12 p-2 w-24 text-white -mr-5 bg-[#263238] opacity-70"
             >
               <path
                 fillRule="evenodd"
@@ -59,7 +59,7 @@ const AllArtifacts = () => {
             </svg>
           </label>
         </div>
-        <p className="text-sm bg-[#D98855] w-24 rounded-3xl text-center p-1 mb-2 ibrahim">
+        <p className="text-sm bg-[#D98855] text-white font-style w-24 rounded-3xl text-center p-1 mb-2 ibrahim">
           {artifact?.length || 0} Art{artifact?.length !== 1 && "s"}
         </p>
       </div>

@@ -17,7 +17,7 @@ const MyAddCard = ({card,inx,updateDelete}) => {
     } = card || {}
    
     return (
-            <tr>
+            <tr className='text-white font-style'>
             <th className='text-[#D98855] hidden md:table-cell '> 
             {inx + 1}
           </th>

@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import UserAuthToken from './UserAuthToken';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
 import Loading from '../PrivatedRouter/Loading';
-
+import ditailsImg from "../../assets/Update Photo/ditails page.jpg"
 const ViewDetails = () => {
     const { user } = useContext(AuthContext);
     const [artifact, setArtifact] = useState({});
@@ -86,26 +86,43 @@ const ViewDetails = () => {
     }
 
     return (
-        <div>
+        <div className='min-h-screen container mx-auto'>
             <Helmet>
                 <title>Artifact Details</title>
             </Helmet>
-            <section className="p-6 dark:bg-gray-100 text-white bg-gray-800 dark:text-gray-800">
-                <div className="container grid gap-6 mx-auto text-center items-center lg:grid-cols-2 xl:grid-cols-5">
-                    <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
-                        <span className="block mb-2 dark:text-violet-600">{artifactName}</span>
-                        <h1 className="md:text-5xl font-extrabold dark:text-gray-900">
+             <div >
+             <div
+                className="hero h-64  mx-auto"
+                style={{
+                  backgroundImage: `url(${ditailsImg})`,
+                }}>
+                <div className="hero-overlay bg-black/75"></div>
+                <div className="hero-content text-neutral-content text-center">
+                  <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">Products Ditails</h1>
+                    <p className="mb-5">
+                     <Link to='/allArtifacts'>All Products</Link> / <span className='text-[#CCAB75] font-style border-b-2 border-[#CCAB75]'>Products Ditails</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+             <section className="p-6 dark:bg-gray-100 text-white bg-gray-800 dark:text-gray-800">
+                <div className="container lg:flex gap-6 mx-auto  items-center lg:grid-cols-2 xl:grid-cols-5">
+                    <div className="lg:w-1/2   py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
+                        <div className='md:w-11/12 rounded-xl shadow-2xl mx-auto bg-[#302E2F] p-6'>
+                        <span className="block text-[#BD9E6D] text-lg mb-2 dark:text-violet-600">{artifactName}</span>
+                        <h1 className="md:text-3xl text-[#777274] font-style font-bold dark:text-gray-900">
                             {createdAt}, {discoveredAt}
                         </h1>
-                        <p className="my-8 text-left md:text-center">
+                        <p className="my-8 text-left text-[#CCAB75]">
                             <span className="font-medium dark:text-gray-900">{historicalContext}</span>
                         </p>
-                        <div>
-                            <p className="text-sm text-left md:text-center">Artifact Type: {artifactType}</p>
-                            <p className="text-sm text-left md:text-center">Discovered By: {discoveredBy}</p>
-                            <p className="text-sm text-left md:text-center">Present Location: {presentLocation}</p>
-                            <p className="text-sm text-left md:text-center">Name: {name}</p>
-                            <p className="text-sm text-left md:text-center">Email: {email}</p>
+                        <div className='text-[#D98853] space-y-2 font-style '>
+                            <p className="text-sm text-left">Artifact Type: {artifactType}</p>
+                            <p className="text-sm text-left">Discovered By: {discoveredBy}</p>
+                            <p className="text-sm text-left">Present Location: {presentLocation}</p>
+                            <p className="text-sm text-left">Name: {name}</p>
+                            <p className="text-sm text-left">Email: {email}</p>
                             <button
                                 onClick={toggleLike}
                                 type="button"
@@ -134,14 +151,14 @@ const ViewDetails = () => {
                                 )}
                                 <span>{like_count}</span>
                             </button>
+                            </div>
                         </div>
                     </div>
-                    <img src={artifactImage} alt="" className="object-cover w-full rounded-md xl:col-span-3" />
+                    <img src={artifactImage} alt="" className="object-cover lg:w-1/2 h-[490px] rounded-md object-center p-2 xl:col-span-3" />
                 </div>
-                <Link to="/allArtifacts" className="text-[#D98855] px-1 rounded-lg">
-                    <FaAngleDoubleLeft />
-                </Link>
+                
             </section>
+             </div>
         </div>
     );
 };

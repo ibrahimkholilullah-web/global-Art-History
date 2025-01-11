@@ -47,16 +47,17 @@ const useAuthAxiose = UserAuthToken()
 
    }
   return (
-    <div className="px-4">
+    <div className="px-4 min-h-screen">
        <Helmet>
             <title>Add Artifact | G. art H. </title>
         </Helmet>
-      <div className=" mx-auto p-6 bg-[#D98855] text-white rounded-lg shadow-md mt-10">
-      <h2 className="text-2xl font-bold text-[#302E2F] mb-6">Add Artifact</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#D1AF78] font-style text-center border-b-2 w-44 mx-auto border-r-2 border-[#D1AF78] mb-6">Add Artifact</h2>
+
+      <div className=" container mx-auto p-6  bg-blue-gray-900 border text-[#D1AF78] rounded-lg shadow-md mt-10">
+      <form onSubmit={handleSubmit} className="space-y-4 font-style">
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Artifact Name
           </label>
           <input
@@ -69,7 +70,7 @@ const useAuthAxiose = UserAuthToken()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Artifact Image (URL)
           </label>
           <input
@@ -77,14 +78,14 @@ const useAuthAxiose = UserAuthToken()
             name="artifactImage"
             required
             placeholder="Enter image URL"
-            className="w-full mt-1 px-4 py-2 border text-[#302E2F] border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            className="w-full mt-1 px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
        </div>
 
         <div className="md:flex gap-5 items-center">
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Artifact Type
           </label>
           <select
@@ -99,7 +100,7 @@ const useAuthAxiose = UserAuthToken()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Historical Context
           </label>
           <textarea
@@ -113,7 +114,7 @@ const useAuthAxiose = UserAuthToken()
 
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Created At
           </label>
           <input
@@ -126,7 +127,7 @@ const useAuthAxiose = UserAuthToken()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Discovered At
           </label>
           <input
@@ -141,7 +142,7 @@ const useAuthAxiose = UserAuthToken()
 
        <div className="md:flex gap-5 items-center">
        <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Discovered By
           </label>
           <input
@@ -154,7 +155,7 @@ const useAuthAxiose = UserAuthToken()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Present Location
           </label>
           <input
@@ -169,7 +170,7 @@ const useAuthAxiose = UserAuthToken()
 
         <div className="md:flex gap-5 items-center">
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Artifact Adder
           </label>
           <input
@@ -182,7 +183,7 @@ const useAuthAxiose = UserAuthToken()
         </div>
 
         <div className="md:w-6/12">
-          <label className="block text-sm font-medium text-[#302E2F]">
+          <label className="block text-sm font-medium text-[#D1AF78]">
             Email
           </label>
           <input
@@ -197,7 +198,7 @@ const useAuthAxiose = UserAuthToken()
 
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-[#302E2F] text-white font-semibold rounded-lg hover:bg-blue-600"
+          className="w-full px-4 py-2 bg-[#302E2F] hover:bg-blue-gray-900 text-white font-semibold rounded-lg hover:border"
         >
           Add Artifact
         </button>

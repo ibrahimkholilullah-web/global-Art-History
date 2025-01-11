@@ -17,7 +17,7 @@ const UpdatePage = () => {
         const { data } = await axios.get(`${import.meta.env.VITE_APP_URL}/artifact/${id}/viewDitaisl`);
         setSingleData(data);
       } catch (err) {
-        toast.error(`${err.message}`);
+        toast.error(err.message);
       }
     };
     fetchArtifact();
@@ -63,12 +63,14 @@ const UpdatePage = () => {
   };
 
   return (
-    <div className="mx-auto p-6 bg-[#302E2F] rounded-lg shadow-md mt-10">
-      <h2 className="text-2xl font-bold text-white mb-6">Update Artifact</h2>
+    <div className="mx-auto container min-h-screen p-6 bg-[#263238] font-style rounded-lg shadow-md mt-10">
+      <h2 className="text-2xl font-bold text-[#D1AF78] font-style text-center border-b-2 w-52 mx-auto border-r-2 border-[#D1AF78] mb-6">
+        Update Artifact
+      </h2>
       <form onSubmit={handleUpdate} className="space-y-4">
         <div className="md:flex gap-5 items-center">
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Artifact Name</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Artifact Name</label>
             <input
               type="text"
               defaultValue={singleData.artifactName}
@@ -79,7 +81,7 @@ const UpdatePage = () => {
             />
           </div>
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Artifact Image (URL)</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Artifact Image (URL)</label>
             <input
               type="url"
               defaultValue={singleData.artifactImage}
@@ -92,7 +94,7 @@ const UpdatePage = () => {
         </div>
         <div className="md:flex gap-5 items-center">
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Artifact Type</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Artifact Type</label>
             {singleData.artifactType && (
               <select
                 name="artifactType"
@@ -107,7 +109,7 @@ const UpdatePage = () => {
             )}
           </div>
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Historical Context</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Historical Context</label>
             <textarea
               name="historicalContext"
               defaultValue={singleData.historicalContext}
@@ -119,7 +121,7 @@ const UpdatePage = () => {
         </div>
         <div className="md:flex gap-5 items-center">
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Created At</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Created At</label>
             <input
               type="text"
               defaultValue={singleData.createdAt}
@@ -130,7 +132,7 @@ const UpdatePage = () => {
             />
           </div>
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Discovered At</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Discovered At</label>
             <input
               type="text"
               defaultValue={singleData.discoveredAt}
@@ -143,7 +145,7 @@ const UpdatePage = () => {
         </div>
         <div className="md:flex gap-5 items-center">
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Discovered By</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Discovered By</label>
             <input
               type="text"
               defaultValue={singleData.discoveredBy}
@@ -154,7 +156,7 @@ const UpdatePage = () => {
             />
           </div>
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Present Location</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Present Location</label>
             <input
               type="text"
               defaultValue={singleData.presentLocation}
@@ -167,7 +169,7 @@ const UpdatePage = () => {
         </div>
         <div className="md:flex gap-5 items-center">
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Artifact Adder</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Artifact Adder</label>
             <input
               type="text"
               name="name"
@@ -176,7 +178,7 @@ const UpdatePage = () => {
             />
           </div>
           <div className="md:w-6/12">
-            <label className="block text-sm font-medium text-[#D98855]">Email</label>
+            <label className="block text-sm font-medium text-[#D1AF78]">Email</label>
             <input
               type="email"
               name="email"
@@ -188,7 +190,7 @@ const UpdatePage = () => {
         </div>
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-[#D98855] text-white font-semibold rounded-lg hover:bg-blue-600"
+          className="w-full px-4 py-2 bg-[#D98855] text-white font-semibold rounded-lg hover:bg-[#263238] hover:border"
         >
           Update Artifact
         </button>

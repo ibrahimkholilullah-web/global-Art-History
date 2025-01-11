@@ -1,204 +1,130 @@
-import React, { useContext, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
-import toast from 'react-hot-toast';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../Firebase/firebase.config';
-import { Helmet } from 'react-helmet-async';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import loginPhoto from "../../assets/Image/login.jpg"
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import React, { useContext, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../Firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
-    const navigate = useNavigate()
-    const {user,signIn,signInWithGoogle} = useContext(AuthContext)
-    const location = useLocation()
-    const emailref = useRef() 
-    const [passwordIcon, setPaawordIcon] = useState(false)
-    const handleGoogleSignIn = async () =>{
-        try{
-            signInWithGoogle()
-            navigate(location?.state ? location.state : "/");
-        }catch(err){
-            toast.error(err.message)
-        }
-    }
-    const handleSignIn = async e => {
-        e.preventDefault()
-        const form = e.target
-        const email = form.email.value
-        const pass = form.password.value
-        try{
-         await signIn(email,pass)
-         navigate(location?.state ? location.state : "/");
-         toast.success('Successfully Login User',{
-          position: 'top-left'
-         })
-        }catch(err){
-            toast.error(err.message)
-        }
-    }
-    const handleForgatePassword = () =>{
-        const email = emailref.current.value;
-        if(email){
-            sendPasswordResetEmail(auth, email)
-            .then(()=>{
-                toast.success('Chack Your Email Address...', {
-                    style: {
-                      border: '1px solid #713200',
-                      padding: '16px',
-                      color: '#713200',
-                    },
-                    iconTheme: {
-                      primary: '#713200',
-                      secondary: '#FFFAEE',
-                    },
-                  });
-            })
-        }
+  const navigate = useNavigate();
+  const { user, signIn, signInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const emailRef = useRef();
+  const [passwordIcon, setPasswordIcon] = useState(false);
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+      navigate(location?.state || "/");
+    } catch (err) {
+      toast.error(err.message);
     }
+  };
 
-    return (
-       <div>
-        <Helmet>
-            <title>Login | G. art H. </title>
-        </Helmet>
-         <div className='flex p-2 justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-      <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-[#D98855] text-white rounded-lg shadow-lg items-center  lg:max-w-4xl '>
-        <div
-          className='hidden mx-autso  lg:block lg:w-1/2'
-          
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    try {
+      await signIn(email, password);
+      navigate(location?.state || "/");
+      toast.success("Successfully logged in!", {
+        position: "top-left",
+      });
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  const handleForgotPassword = () => {
+    const email = emailRef.current.value;
+    if (email) {
+      sendPasswordResetEmail(auth, email).then(() => {
+        toast.success("Check your email for reset instructions.", {
+          position: "top-left",
+        });
+      });
+    } else {
+      toast.error("Please enter your email address.");
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex justify-center items-center  bg-[#302E2F] px-4">
+      <Helmet>
+        <title>Login | Gadget Heaven</title>
+      </Helmet>
+      <div className="w-full max-w-md bg-[#263238] text-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-center text-white">
+          Welcome Back
+        </h2>
+        <p className="mt-2 text-sm text-center text-[#D1AF78]">
+          Sign in to continue.
+        </p>
+        <button
+          onClick={handleGoogleSignIn}
+          className="w-full mt-4 flex items-center justify-center px-4 py-2 bg-[#D1AF78]  text-black font-style rounded-lg hover:bg-blue-500 focus:outline-none"
         >
-          <img className='mx-auto w-[400px] h-[400px] rounded-lg border p-1 ' src={loginPhoto} alt="" />
+          Sign in with Google
+        </button>
+        <div className="flex items-center mt-4">
+          <span className="w-1/5 border-b"></span>
+          <p className="text-sm mx-auto text-white text-center">or use your email</p>
+          <span className="w-1/5 border-b"></span>
         </div>
-
-        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 '>
-          <div className='flex justify-center mx-auto'>
-            <img className='w-auto h-7 sm:h-8' alt='' />
-          </div>
-
-          <p className='mt-3 text-xl text-center  '>
-            Welcome back!
-          </p>
-
-          <div onClick={handleGoogleSignIn}
-            className='flex cursor-pointer items-center justify-center mt-4  transition-colors duration-300 transform border rounded-lg hover:bg-[#302E2F] '
-          >
-            <div  className='px-4 py-2'>
-              <svg className='w-6 h-6' viewBox='0 0 40 40'>
-                <path
-                  d='M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z'
-                  fill='#FFC107'
-                />
-                <path
-                  d='M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z'
-                  fill='#FF3D00'
-                />
-                <path
-                  d='M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z'
-                  fill='#4CAF50'
-                />
-                <path
-                  d='M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z'
-                  fill='#1976D2'
-                />
-              </svg>
-            </div>
-
-            <span className='w-5/6 px-4 py-3 font-bold text-center'>
-              Sign in with Google
-            </span>
-          </div>
-
-          <div className='flex items-center justify-between mt-4'>
-            <span className='w-1/5 border-b  lg:w-1/4'></span>
-
-            <div className='text-xs text-center uppercase  hover:underline'>
-              or login with email
-            </div>
-
-            <span className='w-1/5 border-b  lg:w-1/4'></span>
-          </div>
-          <form onSubmit={handleSignIn}>
-            <div className='mt-4'>
-              <label
-                className='block mb-2 text-sm font-medium  '
-                htmlFor='LoggingEmailAddress'
-              >
-                Email Address
-              </label>
-              <input
-                ref={emailref}
-                id='LoggingEmailAddress'
-                autoComplete='email'
-                name='email'
-                className='block w-full px-4 py-2 text-black bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                type='email'
-              />
-            </div>
-
-            <div className='mt-4 relative'>
-              <div className='flex justify-between'>
-                <label
-                  className='block mb-2 text-sm font-medium  '
-                  htmlFor='loggingPassword'
-                >
-                  Password
-                </label>
-              </div>
-
-              <input
-                id='loggingPassword'
-                autoComplete='current-password'
-                name='password'
-                className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                type={passwordIcon ? "text" : "password"}
-              />
-               <button type="button" onClick={() => setPaawordIcon(!passwordIcon)} className="absolute text-black top-10 right-5 "> 
-            {
-              passwordIcon ? <FaEye />
-              :<FaEyeSlash />
-            }
-            </button>
-            </div>
-            <p className="mt-2">
-              <a
-                href="#"
-                onClick={handleForgatePassword}
-                
-                className="text-[#302E2F] text-sm hover:underline"
-              >
-                Forgot Password?
-              </a>
-              </p>
-            <div className='mt-6'>
-              <button
-                type='submit'
-                className='w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
-              >
-                Sign In
-              </button>
-            </div>
-          </form>
-
-          <div className='flex items-center justify-between mt-4'>
-            <span className='w-1/5 border-b  md:w-1/4'></span>
-
-            <Link
-              to='/register'
-              className='text-xs uppercase  hover:underline'
+        <form onSubmit={handleSignIn} className="mt-4">
+          <label className="block text-sm text-[#D1AF78] font-style">Email Address</label>
+          <input
+            ref={emailRef}
+            type="email"
+            name="email"
+            className="w-full px-4 py-2 text-black mt-2 bg-gray-200 border rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+          />
+          <label className="block text-sm text-[#D1AF78] font-style mt-4">Password</label>
+          <div className="relative">
+            <input
+              type={passwordIcon ? "text" : "password"}
+              name="password"
+              className="w-full px-4 py-2 text-black bg-gray-200 border rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+            />
+            <button
+              type="button"
+              onClick={() => setPasswordIcon(!passwordIcon)}
+              className="absolute top-3 right-4 text-gray-600"
             >
-              or sign up
-            </Link>
-
-            <span className='w-1/5 border-b  md:w-1/4'></span>
+              {passwordIcon ? <FaEye /> : <FaEyeSlash />}
+            </button>
           </div>
+          <div className="mt-2 text-right">
+            <button
+              type="button"
+              onClick={handleForgotPassword}
+              className="text-[#D1AF78] font-style text-sm hover:underline"
+            >
+              Forgot Password?
+            </button>
+          </div>
+          <button
+            type="submit"
+            className="w-full mt-4 text-black font-style bg-[#D1AF78] py-2 rounded-lg hover:bg-[#D1AF78] focus:outline-none"
+          >
+            Sign In
+          </button>
+        </form>
+        <div className="mt-4 text-center">
+          <p className="text-sm">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-[#CE6334] font-style hover:underline">
+              Sign Up
+            </Link>
+          </p>
         </div>
       </div>
     </div>
-       </div>
-    );
+  );
 };
 
 export default Login;
