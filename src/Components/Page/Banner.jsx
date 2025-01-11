@@ -12,7 +12,7 @@ const Banner = () => {
   });
 
   return (
-    <div className="bg-[#302E2F] pt-32 md:pt-0">
+    <div className="bg-[#302E2F]  md:pt-0">
       <Carousel className="h-[50vh] md:h-[60vh] lg:h-[80vh] bg-cover mx-auto w-full">
         {/* Slide 1 */}
         <div className="relative h-full w-full">

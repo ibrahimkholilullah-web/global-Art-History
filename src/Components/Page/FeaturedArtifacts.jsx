@@ -65,7 +65,7 @@ const FeaturedArtifacts = () => {
           </div>
         ))}
       </div>
-      <Link to="/allArtifacts" className="btn border-none pt-10 rounded-none mx-auto flex w-52 my-8  bg-[#D98855] hover:bg-[#D1AF78] text-white border-2">
+      <Link to="/allArtifacts" className="btn border-none rounded-none my-16 px-10 flex mx-auto bg-[#D98855] hover:text-black w-56 hover:bg-[#D1AF78] text-white border-2">
         View More Artifact <FaAngleDoubleRight />
       </Link>
     </div>
