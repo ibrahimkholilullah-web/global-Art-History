@@ -1,7 +1,6 @@
 import React from 'react';
 import extra1 from "../../assets/Update Photo/Extra1 (1).jpg"
 import extra2 from "../../assets/Update Photo/Extra1 (2).jpg"
-import '../../Style/ibrahim.css'
 const ExtraOne = () => {
  
     return (
