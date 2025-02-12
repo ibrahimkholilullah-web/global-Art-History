@@ -45,18 +45,20 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/AddArtifacts"
-          className={({ isActive }) =>
-            isActive
-              ? 'border-b-2 border-white pb-1 text-[#D98855]'
-              : 'hover:border-b-2 hover:border-gray-300 text-white pb-1'
-          }
-        >
-          Add Artifacts
-        </NavLink>
-      </li>
+     {
+      user &&  <li>
+      <NavLink
+        to="/AddArtifacts"
+        className={({ isActive }) =>
+          isActive
+            ? 'border-b-2 border-white pb-1 text-[#D98855]'
+            : 'hover:border-b-2 hover:border-gray-300 text-white pb-1'
+        }
+      >
+        Add Artifacts
+      </NavLink>
+    </li>
+     }
     </>
   );
 
