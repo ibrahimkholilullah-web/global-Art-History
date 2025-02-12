@@ -9,7 +9,7 @@ const Contact = () => {
       }}
       className="bg-cover container mx-auto bg-center bg-no-repeat bg-fixed py-16 px-4 min-h-screen"
     >
-      <div className="bg-black/50 py-16 px-4 container mx-auto">
+      <div className="bg-black/50 py-16 px-4 container rounded-xl  mx-auto">
         <div className="container mx-auto text-center">
           <h3 className="text-[#d1a36e] text-sm uppercase border-l-2 border-b-2 w-36 mx-auto border-[#d1a36e] font-semibold mb-2">
             Have a Question?
