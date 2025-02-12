@@ -4,8 +4,8 @@ import { FaGithub } from "react-icons/fa";
 
 const ExtraFeatures = () => {
   return (
-    <div className="flex justify-center my-16 items-center py-10 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="w-full max-w-lg p-8 bg-[#3E3B3A] rounded-lg shadow-xl text-center transform hover:scale-105 transition duration-300">
+    <div className="flex justify-center my-24 items-center py-10 bg-gradient-to-br from-gray-800 to-gray-900">
+      <div className="w-full max-w-2xl p-8  rounded-lg shadow-xl text-center transform hover:scale-105 transition duration-300">
         {/* Author Image */}
         <div className="flex justify-center mb-6">
           <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-[#FDD835]">
